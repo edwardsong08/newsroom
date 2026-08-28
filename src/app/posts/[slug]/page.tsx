@@ -62,13 +62,15 @@ export default async function PostPage(props: PostPageProps) {
           <span>{post.readingTime}</span>
         </div>
         <LivingPicture
-          className="article-living-picture"
-          src="/editorial/enchanted-pressroom.png"
-          alt="An old pressroom where a pen appears to write by itself among books and brass instruments"
-          width={1536}
-          height={1024}
+          className="article-living-picture non-muggle-only"
+          src="/editorial/living/pressroom-typewriter.jpg"
+          videoSrc="/editorial/living/pressroom-typewriter.mp4"
+          poster="/editorial/living/pressroom-typewriter.jpg"
+          alt="A woman typing steadily at a vintage typewriter in a darkened office"
+          width={960}
+          height={506}
           sizes="(max-width: 780px) 100vw, 76vw"
-          caption="Filed from the pressroom. The plate may shift when left unattended."
+          caption="Filed from the pressroom while the final keys were still moving."
         />
       </header>
 

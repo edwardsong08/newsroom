@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { DeskPortrait } from "@/components/desk-portrait";
 import { LivingPicture } from "@/components/living-picture";
@@ -10,25 +11,48 @@ export default function Home() {
   return (
     <>
       <div className="front-kicker" aria-label="Front page introduction">
-        <span>Late Edition</span>
-        <p>A paper for work that crosses categories—and occasionally moves.</p>
-        <span>Read by lamplight</span>
+        <span className="muggle-only">Front Page</span>
+        <span className="non-muggle-only">Late Edition</span>
+        <p className="muggle-only">One place for work that crosses categories</p>
+        <p className="non-muggle-only">A paper for work that crosses categories—and occasionally moves.</p>
+        <span className="muggle-only">Read slowly</span>
+        <span className="non-muggle-only">Read by lamplight</span>
       </div>
 
       <section className="lead-package" aria-labelledby="lead-story-title">
+        <figure className="lead-visual muggle-only">
+          <div className="lead-image-frame">
+            <Image
+              className="lead-image"
+              src="/editorial/front-page-engraving.png"
+              alt="An engraved desk where technology, career, and life meet on the page"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 820px) 100vw, 64vw"
+              priority
+            />
+          </div>
+          <figcaption>
+            <p>Technology, career, and a considered life share one working desk.</p>
+            <span>Illustration for The Working Draft</span>
+          </figcaption>
+        </figure>
+
         <LivingPicture
-          className="lead-visual"
-          src="/editorial/enchanted-pressroom.png"
-          alt="A sepia pressroom with a brass calculating machine, legal scales, a chalkboard, drifting pages, and a self-writing pen"
-          width={1536}
-          height={1024}
+          className="lead-visual non-muggle-only"
+          src="/editorial/living/pressroom-typewriter.jpg"
+          videoSrc="/editorial/living/pressroom-typewriter.mp4"
+          poster="/editorial/living/pressroom-typewriter.jpg"
+          alt="A woman typing steadily at a vintage typewriter in a darkened office"
+          width={960}
+          height={506}
           sizes="(max-width: 820px) 100vw, 64vw"
-          caption="Technology, judgment, teaching, and writing occupy the pressroom after dark."
+          caption="A midnight correspondent files the late edition one keystroke at a time."
           priority
         />
 
         <article className="lead-story">
-          <span className="exclusive-stamp" aria-hidden="true">Uncommonly true</span>
+          <span className="exclusive-stamp non-muggle-only" aria-hidden="true">Uncommonly true</span>
           <div className="story-label">
             <Link href={`/category/${leadStory.desk}`}>{leadDesk?.label}</Link>
             <span>{leadStory.kicker}</span>
@@ -55,8 +79,12 @@ export default function Home() {
       <section className="desk-section" aria-labelledby="desk-section-title">
         <div className="section-rule-heading">
           <p>The desks</p>
-          <h2 id="desk-section-title">Three rooms. One restless mind.</h2>
-          <span>Illustrated index</span>
+          <h2 id="desk-section-title">
+            <span className="muggle-only">Three lenses. One life.</span>
+            <span className="non-muggle-only">Three rooms. One restless mind.</span>
+          </h2>
+          <span className="muggle-only">Coverage</span>
+          <span className="non-muggle-only">Living index</span>
         </div>
 
         <div className="desk-grid">

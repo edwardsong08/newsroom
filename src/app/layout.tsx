@@ -2,8 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { EditionToggle } from "@/components/edition-toggle";
 import { desks } from "@/lib/posts";
 import "./globals.css";
+import "./muggle.css";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -35,10 +37,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/editorial/enchanted-pressroom.png",
+        url: "/editorial/front-page-engraving.png",
         width: 1536,
         height: 1024,
-        alt: "An enchanted sepia pressroom joining technology, law, teaching, and writing",
+        alt: "An engraved desk where technology, career, and life meet on the page",
       },
     ],
   },
@@ -46,12 +48,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Working Draft — Edward Song",
     description,
-    images: ["/editorial/enchanted-pressroom.png"],
+    images: ["/editorial/front-page-engraving.png"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#d5c197",
+  themeColor: "#f2ecdf",
 };
 
 export default function RootLayout({
@@ -62,7 +64,17 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${instrumentSerif.variable}`}
       data-scroll-behavior="smooth"
+      data-edition="muggle"
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              '(function(){try{var e=localStorage.getItem("working-draft-edition:v1");if(e==="non-muggle")document.documentElement.dataset.edition=e}catch(_){}})()',
+          }}
+        />
+      </head>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to the story
@@ -70,14 +82,18 @@ export default function RootLayout({
         <div className="site-frame">
           <header className="publication-header">
             <div className="utility-row">
-              <span>Edward Song’s independent broadsheet</span>
-              <span>Vol. I · No. 01 · Printed after midnight</span>
+              <span className="muggle-only">Edward Song’s independent journal</span>
+              <span className="non-muggle-only">Edward Song’s independent broadsheet</span>
+              <span className="muggle-only">Vol. I · Issue 01 · Est. 2026</span>
+              <span className="non-muggle-only">Vol. I · No. 01 · Printed after midnight</span>
               <a href="https://edsong.xyz" target="_blank" rel="noreferrer">
                 Portfolio <span aria-hidden="true">↗</span>
               </a>
             </div>
 
-            <div className="ink-ticker" aria-label="Publication notice">
+            <EditionToggle />
+
+            <div className="ink-ticker non-muggle-only" aria-label="Publication notice">
               <div>
                 <span>The ink is still drying</span>
                 <span aria-hidden="true">✦</span>
@@ -89,17 +105,24 @@ export default function RootLayout({
 
             <div className="masthead-row">
               <Link className="masthead" href="/" aria-label="The Working Draft, home">
-                <span className="masthead-ornament" aria-hidden="true">☾</span>
+                <span className="masthead-ornament non-muggle-only" aria-hidden="true">☾</span>
                 <span className="masthead-words">
                   <span className="masthead-the">The</span>
                   <span>Working Draft</span>
                 </span>
-                <span className="masthead-ornament" aria-hidden="true">☽</span>
+                <span className="masthead-ornament non-muggle-only" aria-hidden="true">☽</span>
               </Link>
               <p>
-                Dispatches on technology, changing careers,
-                <br />
-                and other matters that refuse to sit still.
+                <span className="muggle-only">
+                  Essays on technology, career change,
+                  <br />
+                  and the work of living deliberately.
+                </span>
+                <span className="non-muggle-only">
+                  Dispatches on technology, changing careers,
+                  <br />
+                  and other matters that refuse to sit still.
+                </span>
               </p>
             </div>
 
@@ -119,7 +142,8 @@ export default function RootLayout({
           <footer className="publication-footer">
             <div className="footer-name">
               <p>The Working Draft</p>
-              <span>Original notes. Restless pictures. Published when the lamps are low.</span>
+              <span className="muggle-only">Original notes. No algorithm. Published when ready.</span>
+              <span className="non-muggle-only">Original notes. Restless pictures. Published when the lamps are low.</span>
             </div>
             <nav aria-label="Footer sections">
               {desks.map((desk) => (
