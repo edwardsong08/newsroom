@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/editorial/front-page-engraving.png",
+        url: "/editorial/enchanted-pressroom.png",
         width: 1536,
         height: 1024,
-        alt: "An engraved editorial collage of technology, law, teaching, and writing",
+        alt: "An enchanted sepia pressroom joining technology, law, teaching, and writing",
       },
     ],
   },
@@ -46,12 +46,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Working Draft — Edward Song",
     description,
-    images: ["/editorial/front-page-engraving.png"],
+    images: ["/editorial/enchanted-pressroom.png"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f2ecdf",
+  themeColor: "#d5c197",
 };
 
 export default function RootLayout({
@@ -70,22 +70,36 @@ export default function RootLayout({
         <div className="site-frame">
           <header className="publication-header">
             <div className="utility-row">
-              <span>Edward Song’s independent journal</span>
-              <span>Vol. I · Issue 01 · Est. 2026</span>
+              <span>Edward Song’s independent broadsheet</span>
+              <span>Vol. I · No. 01 · Printed after midnight</span>
               <a href="https://edsong.xyz" target="_blank" rel="noreferrer">
                 Portfolio <span aria-hidden="true">↗</span>
               </a>
             </div>
 
+            <div className="ink-ticker" aria-label="Publication notice">
+              <div>
+                <span>The ink is still drying</span>
+                <span aria-hidden="true">✦</span>
+                <span>Every certainty remains a working draft</span>
+                <span aria-hidden="true">✦</span>
+                <span>Read closely—the pictures have opinions</span>
+              </div>
+            </div>
+
             <div className="masthead-row">
               <Link className="masthead" href="/" aria-label="The Working Draft, home">
-                <span className="masthead-the">The</span>
-                <span>Working Draft</span>
+                <span className="masthead-ornament" aria-hidden="true">☾</span>
+                <span className="masthead-words">
+                  <span className="masthead-the">The</span>
+                  <span>Working Draft</span>
+                </span>
+                <span className="masthead-ornament" aria-hidden="true">☽</span>
               </Link>
               <p>
                 Dispatches on technology, changing careers,
                 <br />
-                and the work of living deliberately.
+                and other matters that refuse to sit still.
               </p>
             </div>
 
@@ -105,7 +119,7 @@ export default function RootLayout({
           <footer className="publication-footer">
             <div className="footer-name">
               <p>The Working Draft</p>
-              <span>Original notes. No algorithm. Published when ready.</span>
+              <span>Original notes. Restless pictures. Published when the lamps are low.</span>
             </div>
             <nav aria-label="Footer sections">
               {desks.map((desk) => (

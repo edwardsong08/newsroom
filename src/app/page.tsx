@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { DeskPortrait } from "@/components/desk-portrait";
+import { LivingPicture } from "@/components/living-picture";
 import { desks, getDesk, posts } from "@/lib/posts";
 
 export default function Home() {
@@ -9,31 +10,25 @@ export default function Home() {
   return (
     <>
       <div className="front-kicker" aria-label="Front page introduction">
-        <span>Front Page</span>
-        <p>One place for work that crosses categories.</p>
-        <span>Read slowly</span>
+        <span>Late Edition</span>
+        <p>A paper for work that crosses categories—and occasionally moves.</p>
+        <span>Read by lamplight</span>
       </div>
 
       <section className="lead-package" aria-labelledby="lead-story-title">
-        <figure className="lead-visual">
-          <div className="lead-image-frame">
-            <Image
-              className="lead-image"
-              src="/editorial/front-page-engraving.png"
-              alt="A newspaper engraving bringing together a computer workbench, legal scales, a classroom chalkboard, and a writer’s notebook"
-              width={1536}
-              height={1024}
-              sizes="(max-width: 820px) 100vw, 64vw"
-              priority
-            />
-          </div>
-          <figcaption>
-            Technology, judgment, teaching, and writing share the same workbench.
-            <span> Original illustration for The Working Draft.</span>
-          </figcaption>
-        </figure>
+        <LivingPicture
+          className="lead-visual"
+          src="/editorial/enchanted-pressroom.png"
+          alt="A sepia pressroom with a brass calculating machine, legal scales, a chalkboard, drifting pages, and a self-writing pen"
+          width={1536}
+          height={1024}
+          sizes="(max-width: 820px) 100vw, 64vw"
+          caption="Technology, judgment, teaching, and writing occupy the pressroom after dark."
+          priority
+        />
 
         <article className="lead-story">
+          <span className="exclusive-stamp" aria-hidden="true">Uncommonly true</span>
           <div className="story-label">
             <Link href={`/category/${leadStory.desk}`}>{leadDesk?.label}</Link>
             <span>{leadStory.kicker}</span>
@@ -44,7 +39,7 @@ export default function Home() {
           <p className="lead-dek">{leadStory.excerpt}</p>
           <p className="lead-standfirst">
             The first edition begins with a simple premise: the lessons worth
-            keeping rarely fit inside one job title.
+            keeping rarely fit inside one job title—or stay politely inside one column.
           </p>
           <div className="byline-row">
             <span>By Edward Song</span>
@@ -60,13 +55,14 @@ export default function Home() {
       <section className="desk-section" aria-labelledby="desk-section-title">
         <div className="section-rule-heading">
           <p>The desks</p>
-          <h2 id="desk-section-title">Three lenses. One life.</h2>
-          <span>Coverage</span>
+          <h2 id="desk-section-title">Three rooms. One restless mind.</h2>
+          <span>Illustrated index</span>
         </div>
 
         <div className="desk-grid">
           {desks.map((desk) => (
             <article className={`desk-card desk-${desk.slug}`} key={desk.slug}>
+              <DeskPortrait desk={desk.slug} number={desk.number} />
               <div className="desk-card-top">
                 <span>{desk.number}</span>
                 <span>Desk</span>
@@ -96,7 +92,7 @@ export default function Home() {
 
       <section className="editorial-note" aria-labelledby="editorial-note-title">
         <div className="editorial-note-label">
-          <span>Editorial</span>
+          <span>From the editor’s desk</span>
           <span>No. 001</span>
         </div>
         <div className="editorial-note-copy">
@@ -115,7 +111,7 @@ export default function Home() {
           </Link>
         </div>
         <aside className="editorial-principles" aria-label="Editorial principles">
-          <p>Filed under</p>
+          <p>House rules</p>
           <ol>
             <li>Experience before certainty</li>
             <li>Clarity before cleverness</li>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { LivingPicture } from "@/components/living-picture";
 import { getDesk, getPost, posts } from "@/lib/posts";
 
 type PostPageProps = {
@@ -60,6 +61,15 @@ export default async function PostPage(props: PostPageProps) {
           <time dateTime={post.date}>Published {post.displayDate}</time>
           <span>{post.readingTime}</span>
         </div>
+        <LivingPicture
+          className="article-living-picture"
+          src="/editorial/enchanted-pressroom.png"
+          alt="An old pressroom where a pen appears to write by itself among books and brass instruments"
+          width={1536}
+          height={1024}
+          sizes="(max-width: 780px) 100vw, 76vw"
+          caption="Filed from the pressroom. The plate may shift when left unattended."
+        />
       </header>
 
       <div className="article-layout">
@@ -87,7 +97,7 @@ export default async function PostPage(props: PostPageProps) {
         <Link className="read-story" href={`/category/${post.desk}`}>
           <span aria-hidden="true">←</span> More from {desk?.label}
         </Link>
-        <span>End of article · Thanks for reading</span>
+        <span>End of article · The ink will remember your place</span>
       </footer>
     </article>
   );

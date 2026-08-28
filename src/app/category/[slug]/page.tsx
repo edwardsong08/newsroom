@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { DeskPortrait } from "@/components/desk-portrait";
 import { desks, getDesk, getPostsByDesk } from "@/lib/posts";
 
 type CategoryPageProps = {
@@ -52,6 +53,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <h1>{desk.label}</h1>
         <p className="category-description">{desk.description}</p>
         <p className="category-manifesto">{desk.manifesto}</p>
+        <DeskPortrait desk={desk.slug} number={desk.number} />
       </header>
 
       {desk.series ? (
@@ -103,13 +105,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         ) : (
           <div className="empty-edition">
             <p className="empty-mark" aria-hidden="true">
-              ¶
+              ✦
             </p>
             <div>
-              <h3>The file is open.</h3>
+              <h3>The cabinet waits.</h3>
               <p>
                 No dispatches have been published from this desk yet. The beat is
-                defined; the first story will arrive when it is ready.
+                defined; the first story will appear when the ink decides to cooperate.
               </p>
             </div>
           </div>
