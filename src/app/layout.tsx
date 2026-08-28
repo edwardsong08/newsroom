@@ -86,12 +86,13 @@ export default function RootLayout({
               <span className="non-muggle-only">Edward Song’s independent broadsheet</span>
               <span className="muggle-only">Vol. I · Issue 01 · Est. 2026</span>
               <span className="non-muggle-only">Vol. I · No. 01 · Printed after midnight</span>
-              <a href="https://edsong.xyz" target="_blank" rel="noreferrer">
-                Portfolio <span aria-hidden="true">↗</span>
-              </a>
+              <div className="utility-actions">
+                <EditionToggle />
+                <a href="https://edsong.xyz" target="_blank" rel="noreferrer">
+                  Portfolio <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
-
-            <EditionToggle />
 
             <div className="ink-ticker non-muggle-only" aria-label="Publication notice">
               <div>

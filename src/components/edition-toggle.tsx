@@ -15,10 +15,21 @@ type EditionChangeDetail = {
   edition: Edition;
 };
 
+type PageFlipEvent = {
+  data: number | string | { page: number; mode: string };
+};
+
+type PageFlipInstance = {
+  destroy: () => void;
+  flipNext: (corner?: "top" | "bottom") => void;
+  flipPrev: (corner?: "top" | "bottom") => void;
+  loadFromImages: (images: string[]) => void;
+  on: (event: string, callback: (event: PageFlipEvent) => void) => void;
+};
+
 const EDITION_KEY = "working-draft-edition:v1";
 const EDITION_EVENT = "working-draft:edition-change";
-const TURN_DURATION = 1240;
-const TURN_MIDPOINT = TURN_DURATION / 2;
+const FLIP_DURATION = 1800;
 
 function readStoredEdition(): Edition {
   try {
@@ -59,15 +70,53 @@ function applyEdition(edition: Edition) {
   );
 }
 
+function waitForImage(src: string) {
+  return new Promise<void>((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve();
+    image.onerror = () => reject(new Error("The page image could not be prepared."));
+    image.src = src;
+  });
+}
+
 export function EditionToggle() {
   const [isTurning, setIsTurning] = useState(false);
+  const pageFlipHost = useRef<HTMLDivElement>(null);
+  const pageFlip = useRef<PageFlipInstance | null>(null);
   const swapTimer = useRef<number | null>(null);
   const finishTimer = useRef<number | null>(null);
-  const edition = useSyncExternalStore(
+  const isMounted = useRef(true);
+  const edition = useSyncExternalStore<Edition>(
     subscribeToEdition,
     readEdition,
     () => "muggle",
   );
+
+  const clearTimers = useCallback(() => {
+    if (swapTimer.current !== null) {
+      window.clearTimeout(swapTimer.current);
+      swapTimer.current = null;
+    }
+    if (finishTimer.current !== null) {
+      window.clearTimeout(finishTimer.current);
+      finishTimer.current = null;
+    }
+  }, []);
+
+  const clearPageFlip = useCallback(() => {
+    clearTimers();
+    try {
+      pageFlip.current?.destroy();
+    } catch {
+      // The temporary renderer may already have removed itself.
+    }
+    pageFlip.current = null;
+    pageFlipHost.current?.replaceChildren();
+    delete document.documentElement.dataset.editionTurn;
+    if (isMounted.current) {
+      setIsTurning(false);
+    }
+  }, [clearTimers]);
 
   useLayoutEffect(() => {
     const nextEdition = readStoredEdition();
@@ -84,24 +133,77 @@ export function EditionToggle() {
   }, []);
 
   useEffect(() => {
+    isMounted.current = true;
+
     return () => {
-      if (swapTimer.current !== null) {
-        window.clearTimeout(swapTimer.current);
-      }
-      if (finishTimer.current !== null) {
-        window.clearTimeout(finishTimer.current);
+      isMounted.current = false;
+      clearTimers();
+      try {
+        pageFlip.current?.destroy();
+      } catch {
+        // The temporary renderer may already have removed itself.
       }
       delete document.documentElement.dataset.editionTurn;
     };
-  }, []);
+  }, [clearTimers]);
+
+  const captureEdition = useCallback(
+    async (
+      targetEdition: Edition,
+      html2canvas: typeof import("html2canvas").default,
+    ) => {
+      await document.fonts.ready;
+
+      const canvas = await html2canvas(document.documentElement, {
+        backgroundColor: null,
+        height: window.innerHeight,
+        logging: false,
+        scale: Math.min(window.devicePixelRatio, 1.5),
+        scrollX: window.scrollX,
+        scrollY: window.scrollY,
+        useCORS: true,
+        width: window.innerWidth,
+        x: window.scrollX,
+        y: window.scrollY,
+        onclone: (clonedDocument) => {
+          clonedDocument.documentElement.dataset.edition = targetEdition;
+          delete clonedDocument.documentElement.dataset.editionTurn;
+
+          clonedDocument
+            .querySelectorAll(".edition-rail, .edition-pageflip-layer")
+            .forEach((element) => element.setAttribute("data-html2canvas-ignore", "true"));
+
+          clonedDocument.querySelectorAll("video").forEach((video) => {
+            const poster = video.getAttribute("poster");
+            if (!poster) {
+              return;
+            }
+
+            const image = clonedDocument.createElement("img");
+            image.className = video.className;
+            image.src = poster;
+            image.alt = "";
+            video.replaceWith(image);
+          });
+
+          const style = clonedDocument.createElement("style");
+          style.textContent =
+            "*,*::before,*::after{animation-play-state:paused!important;caret-color:transparent!important}";
+          clonedDocument.head.append(style);
+        },
+      });
+
+      return canvas.toDataURL("image/jpeg", 0.94);
+    },
+    [],
+  );
 
   const chooseEdition = useCallback(
-    (nextEdition: Edition) => {
+    async (nextEdition: Edition) => {
       if (nextEdition === edition || isTurning) {
         return;
       }
 
-      const root = document.documentElement;
       const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
       ).matches;
@@ -111,21 +213,98 @@ export function EditionToggle() {
         return;
       }
 
-      root.dataset.editionTurn = `to-${nextEdition}`;
+      const host = pageFlipHost.current;
+      if (!host) {
+        applyEdition(nextEdition);
+        return;
+      }
+
       setIsTurning(true);
 
-      swapTimer.current = window.setTimeout(() => {
-        applyEdition(nextEdition);
-        swapTimer.current = null;
-      }, TURN_MIDPOINT);
+      try {
+        const [{ default: html2canvas }, { PageFlip }] = await Promise.all([
+          import("html2canvas"),
+          import("page-flip"),
+        ]);
 
-      finishTimer.current = window.setTimeout(() => {
-        delete root.dataset.editionTurn;
-        setIsTurning(false);
-        finishTimer.current = null;
-      }, TURN_DURATION);
+        const [currentImage, nextImage] = await Promise.all([
+          captureEdition(edition, html2canvas),
+          captureEdition(nextEdition, html2canvas),
+        ]);
+
+        if (!isMounted.current) {
+          return;
+        }
+
+        await Promise.all([waitForImage(currentImage), waitForImage(nextImage)]);
+
+        host.replaceChildren();
+        const mount = document.createElement("div");
+        mount.className = "edition-pageflip-mount";
+        host.append(mount);
+
+        const isForward = nextEdition === "non-muggle";
+        const images = isForward
+          ? [currentImage, nextImage]
+          : [nextImage, currentImage];
+        const renderer = new PageFlip(mount, {
+          autoSize: false,
+          disableFlipByClick: true,
+          drawShadow: true,
+          flippingTime: FLIP_DURATION,
+          height: window.innerHeight,
+          maxShadowOpacity: 0.72,
+          mobileScrollSupport: false,
+          showCover: false,
+          showPageCorners: false,
+          size: "fixed",
+          startPage: isForward ? 0 : 1,
+          useMouseEvents: false,
+          usePortrait: true,
+          width: window.innerWidth,
+        }) as PageFlipInstance;
+
+        pageFlip.current = renderer;
+        let flipStarted = false;
+
+        renderer.on("changeState", (event) => {
+          if (event.data === "flipping") {
+            flipStarted = true;
+          }
+          if (event.data === "read" && flipStarted) {
+            applyEdition(nextEdition);
+            clearPageFlip();
+          }
+        });
+
+        renderer.loadFromImages(images);
+        document.documentElement.dataset.editionTurn = `to-${nextEdition}`;
+
+        swapTimer.current = window.setTimeout(() => {
+          applyEdition(nextEdition);
+          swapTimer.current = null;
+        }, FLIP_DURATION * 0.52);
+
+        finishTimer.current = window.setTimeout(() => {
+          applyEdition(nextEdition);
+          clearPageFlip();
+        }, FLIP_DURATION + 450);
+
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            if (isForward) {
+              renderer.flipNext("top");
+            } else {
+              renderer.flipPrev("top");
+            }
+          });
+        });
+      } catch {
+        applyEdition(nextEdition);
+        clearPageFlip();
+      }
     },
-    [edition, isTurning],
+    [captureEdition, clearPageFlip, edition, isTurning],
   );
 
   return (
@@ -158,12 +337,13 @@ export function EditionToggle() {
         </div>
       </div>
 
-      <div className="edition-turn-layer" aria-hidden="true">
-        <div className="edition-turn-sheet">
-          <span className="edition-turn-imprint">The Working Draft</span>
-          <span className="edition-turn-fold" />
-        </div>
-      </div>
+      <div
+        ref={pageFlipHost}
+        className="edition-pageflip-layer"
+        aria-hidden="true"
+        onWheel={(event) => event.preventDefault()}
+        onTouchMove={(event) => event.preventDefault()}
+      />
     </>
   );
 }
