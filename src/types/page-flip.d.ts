@@ -27,5 +27,6 @@ declare module "page-flip" {
     flipPrev(corner?: "top" | "bottom"): void;
     loadFromImages(images: string[]): void;
     on(event: string, callback: (event: PageFlipEvent) => void): void;
+    turnToPage(page: number): void;
   }
 }

@@ -1016,12 +1016,10 @@ main { display: block; }
 .edition-pageflip-mount.stf__parent {
   position: absolute;
   inset: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  min-width: 100vw !important;
-  min-height: 100vh !important;
-  max-width: 100vw !important;
-  max-height: 100vh !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
 
 .edition-pageflip-mount canvas {
