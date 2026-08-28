@@ -1,71 +1,127 @@
+import Image from "next/image";
 import Link from "next/link";
-import { posts } from "@/lib/posts";
+import { desks, getDesk, posts } from "@/lib/posts";
 
 export default function Home() {
+  const leadStory = posts[0];
+  const leadDesk = getDesk(leadStory.desk);
+
   return (
     <>
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <p className="eyebrow">Edward’s notebook · Est. 2026</p>
-          <h1 id="hero-title">
-            Notes from the <em>workbench.</em>
+      <div className="front-kicker" aria-label="Front page introduction">
+        <span>Front Page</span>
+        <p>One place for work that crosses categories.</p>
+        <span>Read slowly</span>
+      </div>
+
+      <section className="lead-package" aria-labelledby="lead-story-title">
+        <figure className="lead-visual">
+          <div className="lead-image-frame">
+            <Image
+              className="lead-image"
+              src="/editorial/front-page-engraving.png"
+              alt="A newspaper engraving bringing together a computer workbench, legal scales, a classroom chalkboard, and a writer’s notebook"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 820px) 100vw, 64vw"
+              priority
+            />
+          </div>
+          <figcaption>
+            Technology, judgment, teaching, and writing share the same workbench.
+            <span> Original illustration for The Working Draft.</span>
+          </figcaption>
+        </figure>
+
+        <article className="lead-story">
+          <div className="story-label">
+            <Link href={`/category/${leadStory.desk}`}>{leadDesk?.label}</Link>
+            <span>{leadStory.kicker}</span>
+          </div>
+          <h1 id="lead-story-title">
+            <Link href={`/posts/${leadStory.slug}`}>{leadStory.title}</Link>
           </h1>
-        </div>
-        <div className="hero-aside">
-          <span className="hero-rule" aria-hidden="true" />
-          <p>
-            A place for unfinished thoughts about software, systems, creative
-            work, and the useful things I notice along the way.
+          <p className="lead-dek">{leadStory.excerpt}</p>
+          <p className="lead-standfirst">
+            The first edition begins with a simple premise: the lessons worth
+            keeping rarely fit inside one job title.
           </p>
-          <Link className="text-link" href="/about">
-            A little about me <span aria-hidden="true">→</span>
+          <div className="byline-row">
+            <span>By Edward Song</span>
+            <time dateTime={leadStory.date}>{leadStory.displayDate}</time>
+            <span>{leadStory.readingTime}</span>
+          </div>
+          <Link className="read-story" href={`/posts/${leadStory.slug}`}>
+            Continue reading <span aria-hidden="true">→</span>
           </Link>
-        </div>
+        </article>
       </section>
 
-      <section className="writing" id="writing" aria-labelledby="writing-title">
-        <div className="section-heading">
-          <p className="eyebrow">The latest</p>
-          <h2 id="writing-title">Writing</h2>
-          <span className="issue-count">{String(posts.length).padStart(2, "0")}</span>
+      <section className="desk-section" aria-labelledby="desk-section-title">
+        <div className="section-rule-heading">
+          <p>The desks</p>
+          <h2 id="desk-section-title">Three lenses. One life.</h2>
+          <span>Coverage</span>
         </div>
 
-        <div className="post-list">
-          {posts.map((post, index) => (
-            <article className="post-row" key={post.slug}>
-              <span className="post-index" aria-hidden="true">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div className="post-main">
-                <div className="post-meta">
-                  <span>{post.category}</span>
-                  <span aria-hidden="true">·</span>
-                  <time dateTime={post.date}>{post.displayDate}</time>
-                  <span aria-hidden="true">·</span>
-                  <span>{post.readingTime}</span>
-                </div>
-                <h3>
-                  <Link href={`/posts/${post.slug}`}>{post.title}</Link>
-                </h3>
-                <p>{post.excerpt}</p>
+        <div className="desk-grid">
+          {desks.map((desk) => (
+            <article className={`desk-card desk-${desk.slug}`} key={desk.slug}>
+              <div className="desk-card-top">
+                <span>{desk.number}</span>
+                <span>Desk</span>
               </div>
-              <Link
-                className="post-arrow"
-                href={`/posts/${post.slug}`}
-                aria-label={`Read ${post.title}`}
-              >
-                <span aria-hidden="true">↗</span>
+              <h3>
+                <Link href={`/category/${desk.slug}`}>{desk.label}</Link>
+              </h3>
+              <p>{desk.description}</p>
+              {desk.series ? (
+                <ul className="series-list" aria-label="Career series">
+                  {desk.series.map((series) => (
+                    <li key={series.name}>{series.name}</li>
+                  ))}
+                </ul>
+              ) : (
+                <span className="desk-folio" aria-hidden="true">
+                  ES / {desk.number}
+                </span>
+              )}
+              <Link className="desk-link" href={`/category/${desk.slug}`}>
+                Visit the desk <span aria-hidden="true">↗</span>
               </Link>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="signoff" aria-label="Publishing note">
-        <p className="eyebrow">No algorithm, no schedule</p>
-        <p className="signoff-line">
-          Just good notes, published when they’re ready.
-        </p>
+      <section className="editorial-note" aria-labelledby="editorial-note-title">
+        <div className="editorial-note-label">
+          <span>Editorial</span>
+          <span>No. 001</span>
+        </div>
+        <div className="editorial-note-copy">
+          <p className="section-kicker">Why these sections</p>
+          <h2 id="editorial-note-title">
+            A career is not a straight line. The publication should not pretend
+            otherwise.
+          </h2>
+          <p>
+            Technology gets its own desk because it is the work of the present.
+            Career holds the accumulated lessons of law, teaching, and writing.
+            Life &amp; Ideas keeps room for everything a résumé cannot explain.
+          </p>
+          <Link className="read-story" href="/about">
+            Read the editor’s note <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <aside className="editorial-principles" aria-label="Editorial principles">
+          <p>Filed under</p>
+          <ol>
+            <li>Experience before certainty</li>
+            <li>Clarity before cleverness</li>
+            <li>Curiosity before conclusion</li>
+          </ol>
+        </aside>
       </section>
     </>
   );

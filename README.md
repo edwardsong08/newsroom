@@ -1,6 +1,6 @@
-# Edward Song’s blog
+# The Working Draft
 
-A small editorial blog built with Next.js 16 and deployed at [blog.edsong.xyz](https://blog.edsong.xyz).
+Edward Song’s newspaper-style personal journal, built with Next.js 16 and deployed at [blog.edsong.xyz](https://blog.edsong.xyz).
 
 ## Local development
 
@@ -13,7 +13,15 @@ Open `http://localhost:3000`.
 
 ## Publishing a post
 
-Posts live in `src/lib/posts.ts`. Add a new object to the `posts` array with a unique slug, metadata, and content sections. The homepage, article route, sitemap, and per-post metadata are generated from that file.
+Posts and publication desks live in `src/lib/posts.ts`. Add a new object to the `posts` array with a unique slug, metadata, content sections, and one of these desk slugs:
+
+- `technology`
+- `career`
+- `life-ideas`
+
+Law, Teaching, and Writing are recurring series within the Career desk. The front page, category archives, article routes, sitemap, and per-page metadata are generated from this central data file.
+
+The original front-page engraving is stored at `public/editorial/front-page-engraving.png`.
 
 ## Verification
 
