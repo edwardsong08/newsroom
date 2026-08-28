@@ -11,15 +11,32 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Publishing a post
+## Editorial system
 
-Posts and publication desks live in `src/lib/posts.ts`. Add a new object to the `posts` array with a unique slug, metadata, content sections, and one of these desk slugs:
+Start with these records before writing or publishing:
+
+- `docs/EDITORIAL_SYSTEM.md` — taxonomy, metadata, homepage/category placement,
+  review gates, and publishing rules
+- `content/ARTICLE_ARCHIVE.md` — registry of every article
+- `content/WORKING_STATE.md` — resumable checkpoint for unfinished work
+- `content/EDITORIAL_LOG.md` — append-only audit trail
+- `content/articles/_TEMPLATE.md` — starting point for a canonical article
+
+Each article's canonical copy lives in `content/articles/<slug>.md`. The current
+site runtime still reads `src/lib/posts.ts`, so approved content must be
+synchronized there during publication. `AGENTS.md` defines the required workflow
+for LLMs and other repository agents.
+
+Publication desks are:
 
 - `technology`
 - `career`
 - `life-ideas`
 
-Law, Teaching, and Writing are recurring series within the Career desk. The front page, category archives, article routes, sitemap, and per-page metadata are generated from this central data file.
+Law, Teaching, and Writing are recurring series within the Career desk. Genre is
+tracked separately from desk. The editorial system defines deterministic hero,
+featured-story, latest-story, and desk-lead selection without fabricating filler
+content.
 
 The original front-page engraving is stored at `public/editorial/front-page-engraving.png`.
 
