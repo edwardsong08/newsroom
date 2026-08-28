@@ -114,7 +114,7 @@ export default function RootLayout({
               </Link>
               <p>
                 <span className="muggle-only">
-                  Essays on technology, career change,
+                  Dispatches on technology, changing careers,
                   <br />
                   and the work of living deliberately.
                 </span>

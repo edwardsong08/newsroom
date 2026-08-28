@@ -1,6 +1,13 @@
 "use client";
 
-import { useCallback, useLayoutEffect, useSyncExternalStore } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 
 type Edition = "muggle" | "non-muggle";
 
@@ -8,14 +15,10 @@ type EditionChangeDetail = {
   edition: Edition;
 };
 
-type TransitionDocument = Document & {
-  startViewTransition?: (update: () => void) => {
-    finished: Promise<void>;
-  };
-};
-
 const EDITION_KEY = "working-draft-edition:v1";
 const EDITION_EVENT = "working-draft:edition-change";
+const TURN_DURATION = 1240;
+const TURN_MIDPOINT = TURN_DURATION / 2;
 
 function readStoredEdition(): Edition {
   try {
@@ -57,6 +60,9 @@ function applyEdition(edition: Edition) {
 }
 
 export function EditionToggle() {
+  const [isTurning, setIsTurning] = useState(false);
+  const swapTimer = useRef<number | null>(null);
+  const finishTimer = useRef<number | null>(null);
   const edition = useSyncExternalStore(
     subscribeToEdition,
     readEdition,
@@ -77,55 +83,87 @@ export function EditionToggle() {
     );
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (swapTimer.current !== null) {
+        window.clearTimeout(swapTimer.current);
+      }
+      if (finishTimer.current !== null) {
+        window.clearTimeout(finishTimer.current);
+      }
+      delete document.documentElement.dataset.editionTurn;
+    };
+  }, []);
+
   const chooseEdition = useCallback(
     (nextEdition: Edition) => {
-      if (nextEdition === edition) {
+      if (nextEdition === edition || isTurning) {
         return;
       }
 
       const root = document.documentElement;
-      const transitionDocument = document as TransitionDocument;
       const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
       ).matches;
 
-      if (!transitionDocument.startViewTransition || reduceMotion) {
+      if (reduceMotion) {
         applyEdition(nextEdition);
         return;
       }
 
       root.dataset.editionTurn = `to-${nextEdition}`;
-      const transition = transitionDocument.startViewTransition(() => {
-        applyEdition(nextEdition);
-      });
+      setIsTurning(true);
 
-      void transition.finished.finally(() => {
+      swapTimer.current = window.setTimeout(() => {
+        applyEdition(nextEdition);
+        swapTimer.current = null;
+      }, TURN_MIDPOINT);
+
+      finishTimer.current = window.setTimeout(() => {
         delete root.dataset.editionTurn;
-      });
+        setIsTurning(false);
+        finishTimer.current = null;
+      }, TURN_DURATION);
     },
-    [edition],
+    [edition, isTurning],
   );
 
   return (
-    <div className="edition-rail">
-      <span className="edition-label">Edition</span>
-      <div className="edition-toggle" role="group" aria-label="Choose edition">
-        <button
-          type="button"
-          aria-pressed={edition === "muggle"}
-          onClick={() => chooseEdition("muggle")}
+    <>
+      <div className="edition-rail">
+        <span className="edition-label">Edition</span>
+        <div
+          className="edition-toggle"
+          role="group"
+          aria-label="Choose edition"
+          aria-busy={isTurning}
         >
-          Muggle
-        </button>
-        <span aria-hidden="true">/</span>
-        <button
-          type="button"
-          aria-pressed={edition === "non-muggle"}
-          onClick={() => chooseEdition("non-muggle")}
-        >
-          Non-Muggle
-        </button>
+          <button
+            type="button"
+            aria-pressed={edition === "muggle"}
+            disabled={isTurning}
+            onClick={() => chooseEdition("muggle")}
+          >
+            Muggle
+          </button>
+          <span aria-hidden="true">/</span>
+          <button
+            type="button"
+            aria-pressed={edition === "non-muggle"}
+            disabled={isTurning}
+            onClick={() => chooseEdition("non-muggle")}
+          >
+            Non-Muggle
+          </button>
+        </div>
       </div>
-    </div>
+
+      <div className="edition-turn-layer" aria-hidden="true">
+        <div className="edition-turn-sheet">
+          <span className="edition-turn-imprint">The Working Draft</span>
+          <span className="edition-turn-fold" />
+        </div>
+      </div>
+    </>
   );
 }

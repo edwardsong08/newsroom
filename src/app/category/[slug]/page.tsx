@@ -105,13 +105,23 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         ) : (
           <div className="empty-edition">
             <p className="empty-mark" aria-hidden="true">
-              ✦
+              <span className="muggle-only">¶</span>
+              <span className="non-muggle-only">✦</span>
             </p>
             <div>
-              <h3>The cabinet waits.</h3>
+              <h3>
+                <span className="muggle-only">The file is open.</span>
+                <span className="non-muggle-only">The cabinet waits.</span>
+              </h3>
               <p>
-                No dispatches have been published from this desk yet. The beat is
-                defined; the first story will appear when the ink decides to cooperate.
+                <span className="muggle-only">
+                  No dispatches have been published from this desk yet. The beat is
+                  defined; the first story will arrive when it is ready.
+                </span>
+                <span className="non-muggle-only">
+                  No dispatches have been published from this desk yet. The beat is
+                  defined; the first story will appear when the ink decides to cooperate.
+                </span>
               </p>
             </div>
           </div>

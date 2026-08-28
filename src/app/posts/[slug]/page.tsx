@@ -99,7 +99,8 @@ export default async function PostPage(props: PostPageProps) {
         <Link className="read-story" href={`/category/${post.desk}`}>
           <span aria-hidden="true">←</span> More from {desk?.label}
         </Link>
-        <span>End of article · The ink will remember your place</span>
+        <span className="muggle-only">End of article · Thanks for reading</span>
+        <span className="non-muggle-only">End of article · The ink will remember your place</span>
       </footer>
     </article>
   );

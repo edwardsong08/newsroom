@@ -13,7 +13,7 @@ export default function Home() {
       <div className="front-kicker" aria-label="Front page introduction">
         <span className="muggle-only">Front Page</span>
         <span className="non-muggle-only">Late Edition</span>
-        <p className="muggle-only">One place for work that crosses categories</p>
+        <p className="muggle-only">One place for work that crosses categories.</p>
         <p className="non-muggle-only">A paper for work that crosses categories—and occasionally moves.</p>
         <span className="muggle-only">Read slowly</span>
         <span className="non-muggle-only">Read by lamplight</span>
@@ -25,7 +25,7 @@ export default function Home() {
             <Image
               className="lead-image"
               src="/editorial/front-page-engraving.png"
-              alt="An engraved desk where technology, career, and life meet on the page"
+              alt="A newspaper engraving bringing together a computer workbench, legal scales, a classroom chalkboard, and a writer’s notebook"
               width={1536}
               height={1024}
               sizes="(max-width: 820px) 100vw, 64vw"
@@ -33,8 +33,8 @@ export default function Home() {
             />
           </div>
           <figcaption>
-            <p>Technology, career, and a considered life share one working desk.</p>
-            <span>Illustration for The Working Draft</span>
+            Technology, judgment, teaching, and writing share the same workbench.
+            <span> Original illustration for The Working Draft.</span>
           </figcaption>
         </figure>
 
@@ -62,8 +62,14 @@ export default function Home() {
           </h1>
           <p className="lead-dek">{leadStory.excerpt}</p>
           <p className="lead-standfirst">
-            The first edition begins with a simple premise: the lessons worth
-            keeping rarely fit inside one job title—or stay politely inside one column.
+            <span className="muggle-only">
+              The first edition begins with a simple premise: the lessons worth
+              keeping rarely fit inside one job title.
+            </span>
+            <span className="non-muggle-only">
+              The first edition begins with a simple premise: the lessons worth
+              keeping rarely fit inside one job title—or stay politely inside one column.
+            </span>
           </p>
           <div className="byline-row">
             <span>By Edward Song</span>
@@ -84,7 +90,7 @@ export default function Home() {
             <span className="non-muggle-only">Three rooms. One restless mind.</span>
           </h2>
           <span className="muggle-only">Coverage</span>
-          <span className="non-muggle-only">Living index</span>
+          <span className="non-muggle-only">Illustrated index</span>
         </div>
 
         <div className="desk-grid">
@@ -120,7 +126,8 @@ export default function Home() {
 
       <section className="editorial-note" aria-labelledby="editorial-note-title">
         <div className="editorial-note-label">
-          <span>From the editor’s desk</span>
+          <span className="muggle-only">Editorial</span>
+          <span className="non-muggle-only">From the editor’s desk</span>
           <span>No. 001</span>
         </div>
         <div className="editorial-note-copy">
@@ -139,7 +146,8 @@ export default function Home() {
           </Link>
         </div>
         <aside className="editorial-principles" aria-label="Editorial principles">
-          <p>House rules</p>
+          <p className="muggle-only">Filed under</p>
+          <p className="non-muggle-only">House rules</p>
           <ol>
             <li>Experience before certainty</li>
             <li>Clarity before cleverness</li>

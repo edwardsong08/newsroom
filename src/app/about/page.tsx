@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <article className="about-shell">
       <header className="about-header">
-        <div className="about-seal" aria-hidden="true">
+        <div className="about-seal non-muggle-only" aria-hidden="true">
           <span>WD</span>
           <span>Est. 2026</span>
         </div>
@@ -20,7 +20,10 @@ export default function AboutPage() {
           <span>Editor’s note</span>
           <span>The Working Draft</span>
         </div>
-        <p className="section-kicker">About this peculiar paper</p>
+        <p className="section-kicker">
+          <span className="muggle-only">About this paper</span>
+          <span className="non-muggle-only">About this peculiar paper</span>
+        </p>
         <h1>A record of the work—and the lives around it.</h1>
         <p>
           The Working Draft is Edward Song’s independent journal about
