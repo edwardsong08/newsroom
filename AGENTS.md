@@ -8,7 +8,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-# The Working Draft operating instructions
+# The Newsroom operating instructions
 
 These instructions apply to the entire repository. Keep this file concise enough
 to load on every run; the detailed editorial contract lives in
@@ -137,10 +137,17 @@ The broader human/AI newsroom is defined in these documents:
 - `docs/EDITORIAL_WORKFLOWS.md` — assignment packets, handoffs, review gates, and acceptance.
 - `docs/NEWSROOM_SHOWCASE.md` — safe public presentation of the system.
 
-At the start of a material task, the Managing Editor (the single front door)
-must identify the assignment, allowed source scope, privacy ceiling, current
-status, next action, and blockers. Save durable context to the packet, working
-state, canonical article, or append-only audit log; never rely on hidden model
-memory. Access to personal notes is packet-scoped and enforced by the
-orchestrator. No broad local, Drive, or Gmail scan is implied by a user request;
-source scope must be explicitly authorized and dry-run inventoried first.
+The newsroom is a client of the server-hosted Personal Knowledge Platform, not
+the owner of Edward's life vault. Read `docs/PERSONAL_BRAIN_INTEGRATION.md` when
+an assignment needs personal context, source intake, Obsidian projection, or a
+cross-application durable delta.
+
+At the start of a material task, the Personal Systems Director is the normal
+front door for Edward. The Managing Editor is the blog-level front door after an
+approved editorial packet exists. Each must identify the assignment, allowed
+source scope, privacy ceiling, current status, next action, and blockers. Save
+durable context to the brain packet, working state, canonical article, or
+append-only audit log; never rely on hidden model memory. Access to personal
+notes is packet-scoped and enforced by the orchestrator. No broad local, Drive,
+or Gmail scan is implied by a user request; source scope must be explicitly
+authorized and dry-run inventoried first.

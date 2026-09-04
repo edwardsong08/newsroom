@@ -4,7 +4,7 @@ Version: 0.1
 
 This is the role directory for The Working Draft. It defines what each agent is
 allowed to see, what it may write, and when it must return control to the
-Managing Editor or Edward.
+Personal Systems Director, Managing Editor, or Edward.
 
 ## Shared contract
 
@@ -32,9 +32,9 @@ short handoff rather than silently changing another role's records.
 
 ### `managing-editor`
 
-- **Mandate:** single front door for Edward; convert requests into assignments,
-  select the smallest useful panel, reconcile disagreements, and report the
-  result.
+- **Mandate:** blog-level front door after the Personal Systems Director has
+  issued an approved packet; convert packets into assignments, select the
+  smallest useful panel, reconcile disagreements, and report the result.
 - **Can read:** assignment metadata, approved packets, public/editorial notes,
   audit history, and explicitly granted restricted excerpts.
 - **Can write:** assignments, working checkpoints, panel decisions, questions,
@@ -43,6 +43,20 @@ short handoff rather than silently changing another role's records.
   privacy hold, or publish without the required gates.
 - **Escalates:** truth conflicts, consent questions, scope expansion, and any
   request to access a sealed source.
+
+### `personal-systems-director`
+
+- **Mandate:** Edward-facing coordinator for the Personal Knowledge Platform;
+  define purpose, source scope, privacy ceiling, required roles, and the
+  response returned to him.
+- **Can read:** system state, source registry, approved knowledge, reviews,
+  audits, and explicitly authorized packets.
+- **Can write:** intake packets, routing decisions, durable-delta proposals,
+  checkpoints, and coordination/audit records through governed services.
+- **Cannot do alone:** bypass source consent, promote uncertain personal facts,
+  remove a privacy hold, or publish blog material.
+- **Escalates:** ambiguous identity, conflicting authority, sealed data,
+  connector expansion, and any action with irreversible external impact.
 
 ### `historian`
 

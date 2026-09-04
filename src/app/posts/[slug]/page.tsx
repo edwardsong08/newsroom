@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { LivingPicture } from "@/components/living-picture";
 import { getDesk, getPost, posts } from "@/lib/posts";
 
 type PostPageProps = {
@@ -52,7 +51,7 @@ export default async function PostPage(props: PostPageProps) {
         <div className="article-folio">
           <Link href={`/category/${post.desk}`}>{desk?.label}</Link>
           <span>{post.kicker}</span>
-          <span>The Working Draft</span>
+          <span>The Newsroom</span>
         </div>
         <h1>{post.title}</h1>
         <p className="article-dek">{post.excerpt}</p>
@@ -61,17 +60,6 @@ export default async function PostPage(props: PostPageProps) {
           <time dateTime={post.date}>Published {post.displayDate}</time>
           <span>{post.readingTime}</span>
         </div>
-        <LivingPicture
-          className="article-living-picture non-muggle-only"
-          src="/editorial/living/pressroom-typewriter.jpg"
-          videoSrc="/editorial/living/pressroom-typewriter.mp4"
-          poster="/editorial/living/pressroom-typewriter.jpg"
-          alt="A woman typing steadily at a vintage typewriter in a darkened office"
-          width={960}
-          height={506}
-          sizes="(max-width: 780px) 100vw, 76vw"
-          caption="Filed from the pressroom while the final keys were still moving."
-        />
       </header>
 
       <div className="article-layout">
@@ -99,8 +87,7 @@ export default async function PostPage(props: PostPageProps) {
         <Link className="read-story" href={`/category/${post.desk}`}>
           <span aria-hidden="true">←</span> More from {desk?.label}
         </Link>
-        <span className="muggle-only">End of article · Thanks for reading</span>
-        <span className="non-muggle-only">End of article · The ink will remember your place</span>
+        <span>End of article · Thanks for reading</span>
       </footer>
     </article>
   );

@@ -4,7 +4,7 @@ import { desks } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "About Edward Song and The Working Draft.",
+  description: "About Edward Song and The Newsroom.",
   alternates: { canonical: "/about" },
 };
 
@@ -12,21 +12,20 @@ export default function AboutPage() {
   return (
     <article className="about-shell">
       <header className="about-header">
-        <div className="about-seal non-muggle-only" aria-hidden="true">
-          <span>WD</span>
+        <div className="about-seal" aria-hidden="true">
+          <span>ES</span>
           <span>Est. 2026</span>
         </div>
         <div className="category-folio">
           <span>Editor’s note</span>
-          <span>The Working Draft</span>
+          <span>The Newsroom</span>
         </div>
         <p className="section-kicker">
-          <span className="muggle-only">About this paper</span>
-          <span className="non-muggle-only">About this peculiar paper</span>
+          <span>About this paper</span>
         </p>
         <h1>A record of the work—and the lives around it.</h1>
         <p>
-          The Working Draft is Edward Song’s independent journal about
+          The Newsroom is Edward Song’s independent paper about
           technology, changing careers, and a considered life.
         </p>
       </header>

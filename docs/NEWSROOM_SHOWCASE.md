@@ -42,8 +42,10 @@ branding that implies official Harry Potter affiliation.
 ## Demonstration sequence
 
 1. Visitor submits a fictional article request.
-2. Managing Editor card shows the assignment and a narrow source scope.
-3. Knowledge Office card shows a timeline, index, and privacy label.
+2. Personal Systems Director card shows the approved purpose, assignment, and
+   narrow source scope.
+3. Knowledge Platform card shows a timeline, index, provenance, and privacy
+   label; the Managing Editor card then shows the newsroom handoff.
 4. Editorial Board cards show premise, structure, counterpoint, and copy passes.
 5. A disclosed original AI columnist or Edward produces the draft.
 6. Publication Desk shows metadata placement, accessibility checks, and an audit

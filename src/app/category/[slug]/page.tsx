@@ -47,7 +47,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <header className="category-header">
         <div className="category-folio">
           <span>Desk {desk.number}</span>
-          <span>The Working Draft</span>
+          <span>The Newsroom</span>
         </div>
         <p className="section-kicker">Coverage</p>
         <h1>{desk.label}</h1>
@@ -105,23 +105,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         ) : (
           <div className="empty-edition">
             <p className="empty-mark" aria-hidden="true">
-              <span className="muggle-only">¶</span>
-              <span className="non-muggle-only">✦</span>
+              <span>¶</span>
             </p>
             <div>
               <h3>
-                <span className="muggle-only">The file is open.</span>
-                <span className="non-muggle-only">The cabinet waits.</span>
+                <span>The file is open.</span>
               </h3>
               <p>
-                <span className="muggle-only">
-                  No dispatches have been published from this desk yet. The beat is
-                  defined; the first story will arrive when it is ready.
-                </span>
-                <span className="non-muggle-only">
-                  No dispatches have been published from this desk yet. The beat is
-                  defined; the first story will appear when the ink decides to cooperate.
-                </span>
+                No dispatches have been published from this desk yet. The beat is
+                defined; the first story will arrive when it is ready.
               </p>
             </div>
           </div>

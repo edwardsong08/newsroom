@@ -1,4 +1,9 @@
-# Enchanted Broadsheet Design System
+# Enchanted Broadsheet Design System (archived experiment)
+
+> **Retired 2026-09-04.** This document records the former Non-Muggle
+> experiment only. It is not part of the production build and must not be
+> reintroduced by editorial agents. The canonical publication is now the single
+> Newsroom broadsheet edition at `news.edsong.xyz`.
 
 This document records the visual experiment on branch `design/enchanted-newspaper` so a future maintainer or LLM can extend it without flattening its personality or drifting into franchise imitation. The experiment now lives beside, not in place of, the original deployed design.
 

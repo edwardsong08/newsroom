@@ -1,39 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Instrument_Serif } from "next/font/google";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { EditionToggle } from "@/components/edition-toggle";
 import { desks } from "@/lib/posts";
 import "./globals.css";
 import "./muggle.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-});
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-});
-
 const description =
-  "The Working Draft is Edward Song’s independent journal about technology, career, and a considered life.";
+  "The Newsroom is Edward Song’s independent paper about technology, career, and a considered life.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://blog.edsong.xyz"),
+  metadataBase: new URL("https://news.edsong.xyz"),
   title: {
-    default: "The Working Draft — Edward Song",
-    template: "%s — The Working Draft",
+    default: "The Newsroom — Edward Song",
+    template: "%s — The Newsroom",
   },
   description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "The Working Draft — Edward Song",
+    title: "The Newsroom — Edward Song",
     description,
-    url: "https://blog.edsong.xyz",
-    siteName: "The Working Draft",
+    url: "https://news.edsong.xyz",
+    siteName: "The Newsroom",
     type: "website",
     images: [
       {
@@ -46,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Working Draft — Edward Song",
+    title: "The Newsroom — Edward Song",
     description,
     images: ["/editorial/front-page-engraving.png"],
   },
@@ -62,19 +49,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${instrumentSerif.variable}`}
+      className="newsroom-document"
       data-scroll-behavior="smooth"
       data-edition="muggle"
-      suppressHydrationWarning
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              '(function(){try{var e=localStorage.getItem("working-draft-edition:v1");if(e==="non-muggle")document.documentElement.dataset.edition=e}catch(_){}})()',
-          }}
-        />
-      </head>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to the story
@@ -82,48 +60,26 @@ export default function RootLayout({
         <div className="site-frame">
           <header className="publication-header">
             <div className="utility-row">
-              <span className="muggle-only">Edward Song’s independent journal</span>
-              <span className="non-muggle-only">Edward Song’s independent broadsheet</span>
-              <span className="muggle-only">Vol. I · Issue 01 · Est. 2026</span>
-              <span className="non-muggle-only">Vol. I · No. 01 · Printed after midnight</span>
+              <span>Edward Song’s independent newsroom</span>
+              <span>Vol. I · Issue 01 · Est. 2026</span>
               <div className="utility-actions">
-                <EditionToggle />
                 <a href="https://edsong.xyz" target="_blank" rel="noreferrer">
                   Portfolio <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
 
-            <div className="ink-ticker non-muggle-only" aria-label="Publication notice">
-              <div>
-                <span>The ink is still drying</span>
-                <span aria-hidden="true">✦</span>
-                <span>Every certainty remains a working draft</span>
-                <span aria-hidden="true">✦</span>
-                <span>Read closely—the pictures have opinions</span>
-              </div>
-            </div>
-
             <div className="masthead-row">
-              <Link className="masthead" href="/" aria-label="The Working Draft, home">
-                <span className="masthead-ornament non-muggle-only" aria-hidden="true">☾</span>
+              <Link className="masthead" href="/" aria-label="The Newsroom, home">
                 <span className="masthead-words">
                   <span className="masthead-the">The</span>
-                  <span>Working Draft</span>
+                  <span>Newsroom</span>
                 </span>
-                <span className="masthead-ornament non-muggle-only" aria-hidden="true">☽</span>
               </Link>
               <p>
-                <span className="muggle-only">
-                  Dispatches on technology, changing careers,
-                  <br />
-                  and the work of living deliberately.
-                </span>
-                <span className="non-muggle-only">
-                  Dispatches on technology, changing careers,
-                  <br />
-                  and other matters that refuse to sit still.
-                </span>
+                Dispatches on technology, changing careers,
+                <br />
+                and the work of living deliberately.
               </p>
             </div>
 
@@ -142,9 +98,8 @@ export default function RootLayout({
 
           <footer className="publication-footer">
             <div className="footer-name">
-              <p>The Working Draft</p>
-              <span className="muggle-only">Original notes. No algorithm. Published when ready.</span>
-              <span className="non-muggle-only">Original notes. Restless pictures. Published when the lamps are low.</span>
+              <p>The Newsroom</p>
+              <span>Original notes. No algorithm. Published when ready.</span>
             </div>
             <nav aria-label="Footer sections">
               {desks.map((desk) => (

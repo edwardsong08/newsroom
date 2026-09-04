@@ -1,6 +1,14 @@
-# The Working Draft
+# The Newsroom
 
-Edward Song’s newspaper-style personal journal, built with Next.js 16 and deployed at [blog.edsong.xyz](https://blog.edsong.xyz).
+Edward Song’s newspaper-style personal journal and first application over the
+self-hosted Personal Knowledge Platform (the evolving 4ME OS foundation), built
+with Next.js 16 and deployed at [news.edsong.xyz](https://news.edsong.xyz).
+
+The blog is a downstream newsroom. The server-hosted brain owns source records,
+provenance, privacy, canonical knowledge, and cross-application context. The
+blog owns editorial workflow, article copy, taxonomy, placement, publication
+verification, and its own audit trail. See
+`docs/PERSONAL_BRAIN_INTEGRATION.md`.
 
 ## Local development
 
@@ -17,6 +25,8 @@ Start with these records before writing or publishing:
 
 - `docs/EDITORIAL_SYSTEM.md` — taxonomy, metadata, homepage/category placement,
   review gates, and publishing rules
+- `docs/PERSONAL_BRAIN_INTEGRATION.md` — authority boundary and packet contract
+  between the Personal Knowledge Platform and this newsroom
 - `content/ARTICLE_ARCHIVE.md` — registry of every article
 - `content/WORKING_STATE.md` — resumable checkpoint for unfinished work
 - `content/EDITORIAL_LOG.md` — append-only audit trail
@@ -39,6 +49,10 @@ featured-story, latest-story, and desk-lead selection without fabricating filler
 content.
 
 The original front-page engraving is stored at `public/editorial/front-page-engraving.png`.
+
+The former `blog.edsong.xyz` identity and the experimental Non-Muggle edition
+are retired. Their commits and media remain in Git history for reference; the
+production application is now one canonical, original broadsheet design.
 
 ## Verification
 

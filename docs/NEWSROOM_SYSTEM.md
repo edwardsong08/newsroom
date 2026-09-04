@@ -1,4 +1,4 @@
-# The Working Draft Newsroom System
+# The Newsroom System
 
 Version: 0.1 (foundation)
 
@@ -16,8 +16,9 @@ chat history.
 
 This system has two boundaries:
 
-1. **Private knowledge office:** curated notes, source provenance, permissions,
-   timelines, and working packets in an Obsidian vault.
+1. **Personal Knowledge Platform:** server-hosted source registry, raw evidence,
+   canonical knowledge, provenance, permissions, timelines, review queues, and
+   packets. Obsidian is an optional projection of approved records.
 2. **Public publication desk:** approved article copy, credits, taxonomy,
    placement, and the deployed site in this repository.
 
@@ -28,31 +29,33 @@ an explicit editorial and author-approval path.
 
 ```text
 Edward Song (Publisher / final authority)
-└── Managing Editor / Chief of Staff (single front door)
-    ├── Knowledge Office
-    │   ├── Historian
-    │   ├── Human Index Editor
-    │   ├── Knowledge Engineer / Record Keeper
+└── Personal Systems Director / Chief of Staff (single front door)
+    ├── Personal Knowledge Platform
+    │   ├── Source and ingestion office
+    │   ├── Historian and index keepers
+    │   ├── Provenance / Fact Checker
     │   ├── Privacy & Consent Steward
-    │   └── Provenance / Fact Checker
-    ├── Editorial Board
-    │   ├── Developmental Editor
-    │   ├── Structure Editor
-    │   ├── Voice Editor
-    │   ├── Counterpoint / Skeptical Reader
-    │   ├── Copy Editor
-    │   └── Proofreader
-    ├── Writers' Room
-    │   ├── Edward (human opinion and lived experience)
-    │   ├── Original AI columnists (clearly disclosed)
-    │   ├── Assignment writers
-    │   └── Lens cards (influence without impersonation)
-    └── Publication Desk
-        ├── Homepage & Taxonomy Editor
-        ├── Art / Experience Director
-        ├── Web Producer
-        ├── Accessibility Reviewer
-        └── Release Examiner
+    │   └── Review, audit, and recovery
+    └── Working Draft Managing Editor
+        ├── Knowledge Office liaison
+        ├── Editorial Board
+        │   ├── Developmental Editor
+        │   ├── Structure Editor
+        │   ├── Voice Editor
+        │   ├── Counterpoint / Skeptical Reader
+        │   ├── Copy Editor
+        │   └── Proofreader
+        ├── Writers' Room
+        │   ├── Edward (human opinion and lived experience)
+        │   ├── Original AI columnists (clearly disclosed)
+        │   ├── Assignment writers
+        │   └── Lens cards (influence without impersonation)
+        └── Publication Desk
+            ├── Homepage & Taxonomy Editor
+            ├── Art / Experience Director
+            ├── Web Producer
+            ├── Accessibility Reviewer
+            └── Release Examiner
 ```
 
 The hierarchy is a routing model, not a claim that every role must be a separate
@@ -63,8 +66,10 @@ or a larger panel for a sensitive essay.
 
 - Edward is the final authority on autobiographical truth, privacy, meaning,
   approval, and publication.
-- The Managing Editor is the only normal intake and response surface. Specialists
-  return findings to it; they do not silently message or publish on their own.
+- The Personal Systems Director is the normal Edward-facing intake and response
+  surface. The Managing Editor is the blog-facing intake after a packet exists.
+  Specialists return findings to their coordinator; they do not silently message
+  or publish on their own.
 - Access is enforced by the orchestrator and retrieval filters, not merely by a
   sentence in an agent prompt. No role receives the whole vault by default.
 - Raw sources are preserved and immutable. Derived notes, indexes, summaries,
@@ -92,8 +97,10 @@ The public editorial records remain authoritative for article publication:
 - `content/EDITORIAL_LOG.md` — append-only audit trail.
 
 The private knowledge records and their schemas are defined in
-`docs/KNOWLEDGE_VAULT.md`. Agent contracts are in `docs/AGENT_ROSTER.md` and
-the end-to-end handoffs are in `docs/EDITORIAL_WORKFLOWS.md`.
+`docs/KNOWLEDGE_VAULT.md`; the cross-application boundary is defined in
+`docs/PERSONAL_BRAIN_INTEGRATION.md`. Agent contracts are in
+`docs/AGENT_ROSTER.md` and the end-to-end handoffs are in
+`docs/EDITORIAL_WORKFLOWS.md`.
 
 ## What begins now
 

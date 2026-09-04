@@ -7,7 +7,9 @@ placement vocabulary remain owned by `docs/EDITORIAL_SYSTEM.md`.
 
 ## Assignment intake
 
-The Managing Editor creates one assignment for every material request:
+The Personal Systems Director receives Edward's material request and creates or
+authorizes the cross-application packet. The blog Managing Editor then creates
+one assignment for every approved editorial request:
 
 ```yaml
 assignment_id: ASG-YYYYMMDD-NNN
@@ -47,28 +49,31 @@ helpful-looking retrieval from expanding access to the whole vault.
 
 ## Standard handoff sequence
 
-1. **Intake (`managing-editor`)** — capture request, assign ID, set scope.
-2. **Context (`knowledge-engineer`, `historian`)** — normalize approved notes,
+1. **Intake (`personal-systems-director`)** — capture Edward's request, define
+   purpose/source scope/privacy ceiling, and authorize the packet.
+2. **Assignment (`managing-editor`)** — convert the approved packet into a blog
+   assignment and select the panel.
+3. **Context (`knowledge-engineer`, `historian`)** — normalize approved notes,
    chronology, and source links; return questions rather than guesses.
-3. **Premise (`developmental-editor`)** — define the central idea, audience,
+4. **Premise (`developmental-editor`)** — define the central idea, audience,
    stakes, and what the article is not trying to do.
-4. **Shape (`structure-editor`)** — produce an outline or scene/section map.
-5. **Draft (`Edward` or selected writer)** — write only from the packet; mark
+5. **Shape (`structure-editor`)** — produce an outline or scene/section map.
+6. **Draft (`Edward` or selected writer)** — write only from the packet; mark
    missing facts as `TODO` or questions.
-6. **Challenge (`counterpoint-editor`, optional research librarian)** — test
+7. **Challenge (`counterpoint-editor`, optional research librarian)** — test
    reasoning and external claims; preserve dissent.
-7. **Voice (`voice-editor`)** — protect Edward's voice or the declared columnist
+8. **Voice (`voice-editor`)** — protect Edward's voice or the declared columnist
    brief; do not imitate an undisclosed person.
-8. **Safety (`privacy-consent-steward`, `provenance-fact-checker`)** — classify
+9. **Safety (`privacy-consent-steward`, `provenance-fact-checker`)** — classify
    people/details, verify claims, clear or block media and quotations.
-9. **Line edit (`copy-editor`, `proofreader`)** — polish clarity and mechanics
+10. **Line edit (`copy-editor`, `proofreader`)** — polish clarity and mechanics
    after substantive decisions settle.
-10. **Author decision (`Edward`)** — answer questions and explicitly approve or
+11. **Author decision (`Edward`)** — answer questions and explicitly approve or
     request revision. Material changes return to `awaiting-author`.
-11. **Publication (`homepage-taxonomy-editor`, `web-producer`,
+12. **Publication (`homepage-taxonomy-editor`, `web-producer`,
     `accessibility-reviewer`, `release-examiner`)** — synchronize canonical
     Markdown, validate metadata/media, deploy, and verify live evidence.
-12. **Archive (`managing-editor`)** — reconcile article, archive row, working
+13. **Archive (`managing-editor`)** — reconcile article, archive row, working
     state, and audit log.
 
 Short dispatches may combine steps, but the packet still records which gates

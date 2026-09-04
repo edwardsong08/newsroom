@@ -2,9 +2,12 @@
 
 Version: 0.1
 
-The vault is a private working memory for the newsroom, not a second public
-website. It may contain life notes, source material, timelines, and article
-seeds, but only an approved excerpt or packet may cross into the repository.
+The vault is the private, server-hosted personal knowledge base for Edward's
+life and work. The newsroom is one consumer of it, not its owner. It may contain
+life notes, source material, timelines, and article seeds, but only an approved
+excerpt or packet may cross into the repository. Obsidian is an optional UI and
+projection; the server-side source registry, evidence, canonical knowledge,
+policy, and audit records are authoritative.
 
 ## Proposed vault layout
 

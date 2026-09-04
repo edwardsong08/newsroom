@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DeskPortrait } from "@/components/desk-portrait";
-import { LivingPicture } from "@/components/living-picture";
 import { desks, getDesk, posts } from "@/lib/posts";
 
 export default function Home() {
@@ -11,16 +10,13 @@ export default function Home() {
   return (
     <>
       <div className="front-kicker" aria-label="Front page introduction">
-        <span className="muggle-only">Front Page</span>
-        <span className="non-muggle-only">Late Edition</span>
-        <p className="muggle-only">One place for work that crosses categories.</p>
-        <p className="non-muggle-only">A paper for work that crosses categories—and occasionally moves.</p>
-        <span className="muggle-only">Read slowly</span>
-        <span className="non-muggle-only">Read by lamplight</span>
+        <span>Front Page</span>
+        <p>One place for work that crosses categories.</p>
+        <span>Read slowly</span>
       </div>
 
       <section className="lead-package" aria-labelledby="lead-story-title">
-        <figure className="lead-visual muggle-only">
+        <figure className="lead-visual">
           <div className="lead-image-frame">
             <Image
               className="lead-image"
@@ -34,25 +30,11 @@ export default function Home() {
           </div>
           <figcaption>
             Technology, judgment, teaching, and writing share the same workbench.
-            <span> Original illustration for The Working Draft.</span>
+            <span> Original illustration for The Newsroom.</span>
           </figcaption>
         </figure>
 
-        <LivingPicture
-          className="lead-visual non-muggle-only"
-          src="/editorial/living/pressroom-typewriter.jpg"
-          videoSrc="/editorial/living/pressroom-typewriter.mp4"
-          poster="/editorial/living/pressroom-typewriter.jpg"
-          alt="A woman typing steadily at a vintage typewriter in a darkened office"
-          width={960}
-          height={506}
-          sizes="(max-width: 820px) 100vw, 64vw"
-          caption="A midnight correspondent files the late edition one keystroke at a time."
-          priority
-        />
-
         <article className="lead-story">
-          <span className="exclusive-stamp non-muggle-only" aria-hidden="true">Uncommonly true</span>
           <div className="story-label">
             <Link href={`/category/${leadStory.desk}`}>{leadDesk?.label}</Link>
             <span>{leadStory.kicker}</span>
@@ -62,14 +44,8 @@ export default function Home() {
           </h1>
           <p className="lead-dek">{leadStory.excerpt}</p>
           <p className="lead-standfirst">
-            <span className="muggle-only">
-              The first edition begins with a simple premise: the lessons worth
-              keeping rarely fit inside one job title.
-            </span>
-            <span className="non-muggle-only">
-              The first edition begins with a simple premise: the lessons worth
-              keeping rarely fit inside one job title—or stay politely inside one column.
-            </span>
+            The first edition begins with a simple premise: the lessons worth
+            keeping rarely fit inside one job title.
           </p>
           <div className="byline-row">
             <span>By Edward Song</span>
@@ -86,11 +62,9 @@ export default function Home() {
         <div className="section-rule-heading">
           <p>The desks</p>
           <h2 id="desk-section-title">
-            <span className="muggle-only">Three lenses. One life.</span>
-            <span className="non-muggle-only">Three rooms. One restless mind.</span>
+            Three lenses. One life.
           </h2>
-          <span className="muggle-only">Coverage</span>
-          <span className="non-muggle-only">Illustrated index</span>
+          <span>Coverage</span>
         </div>
 
         <div className="desk-grid">
@@ -126,8 +100,7 @@ export default function Home() {
 
       <section className="editorial-note" aria-labelledby="editorial-note-title">
         <div className="editorial-note-label">
-          <span className="muggle-only">Editorial</span>
-          <span className="non-muggle-only">From the editor’s desk</span>
+          <span>Editorial</span>
           <span>No. 001</span>
         </div>
         <div className="editorial-note-copy">
@@ -146,8 +119,7 @@ export default function Home() {
           </Link>
         </div>
         <aside className="editorial-principles" aria-label="Editorial principles">
-          <p className="muggle-only">Filed under</p>
-          <p className="non-muggle-only">House rules</p>
+          <p>Filed under</p>
           <ol>
             <li>Experience before certainty</li>
             <li>Clarity before cleverness</li>
