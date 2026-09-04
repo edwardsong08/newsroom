@@ -90,7 +90,8 @@ export default function RootLayout({
                   {desk.navLabel}
                 </Link>
               ))}
-              <Link href="/about">About</Link>
+              <Link href="/about">People</Link>
+              <Link href="/system">How it works</Link>
             </nav>
           </header>
 
@@ -107,7 +108,8 @@ export default function RootLayout({
                   {desk.navLabel}
                 </Link>
               ))}
-              <Link href="/about">About</Link>
+              <Link href="/about">People</Link>
+              <Link href="/system">How it works</Link>
             </nav>
             <div className="footer-base">
               <span>© {new Date().getFullYear()} Edward Song</span>

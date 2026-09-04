@@ -115,7 +115,7 @@ export default function Home() {
             Life &amp; Ideas keeps room for everything a résumé cannot explain.
           </p>
           <Link className="read-story" href="/about">
-            Read the editor’s note <span aria-hidden="true">→</span>
+            Meet the people <span aria-hidden="true">→</span>
           </Link>
         </div>
         <aside className="editorial-principles" aria-label="Editorial principles">
@@ -126,6 +126,27 @@ export default function Home() {
             <li>Curiosity before conclusion</li>
           </ol>
         </aside>
+      </section>
+
+      <section className="system-intro" aria-labelledby="system-intro-title">
+        <div className="system-intro-heading">
+          <p className="section-kicker">A friendly field guide</p>
+          <h2 id="system-intro-title">The short version of how this newsroom works.</h2>
+        </div>
+        <div className="system-intro-copy">
+          <p>
+            Think of The Newsroom as a small paper with a very good filing room.
+            Edward brings the lived experience and the final say; a cast of
+            specialized AI colleagues helps sort context, ask better questions,
+            shape drafts, and check the details before anything is printed.
+          </p>
+          <div className="system-steps" aria-label="Newsroom workflow">
+            <div><span>01</span><strong>Gather</strong><p>A request arrives with a clear purpose and a deliberately narrow source scope.</p></div>
+            <div><span>02</span><strong>Make sense</strong><p>Researchers, editors, and fact-checkers turn approved context into a useful assignment.</p></div>
+            <div><span>03</span><strong>Publish carefully</strong><p>Placement, accessibility, provenance, and Edward’s approval are checked before release.</p></div>
+          </div>
+          <Link className="read-story" href="/system">See how the system is designed <span aria-hidden="true">→</span></Link>
+        </div>
       </section>
     </>
   );
