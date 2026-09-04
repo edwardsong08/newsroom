@@ -1,303 +1,567 @@
 # AI Employee Profile Questionnaire
 
-Version: 0.1  
-Purpose: define the identities, voices, working boundaries, and relationships of the Newsroom’s AI employees.
+Version: 0.2  
+Purpose: a natural, employee-by-employee workbook for designing the human–AI newsroom.
 
-This is a worksheet, not a test. Skip questions, write `TBD`, or leave an
-answer for later. Specific fragments are more useful than perfect biographies.
-These are designed operating identities—not claims that an AI has a private
-life, consciousness, credentials, or lived experience. Never invent a real
-person’s biography or grant access to personal material because it might help.
+This worksheet creates recognizable operating identities, not claims that an AI has a private life, consciousness, credentials, or lived experience. Skip questions, write TBD, or leave an answer for later. Never invent a real person’s biography or grant an employee access to personal material because it might be useful.
 
-## How to use this
+## How to move through the workbook
 
-1. Copy the profile sections for each permanent or recurring employee.
-2. Answer the shared questions, then the role-specific questions.
-3. Mark uncertainty and contradictions instead of smoothing them over.
-4. Define source access and write access separately from personality.
-5. Version the profile and record material changes in the audit log after Edward approves them.
+1. Read the index and choose one employee.
+2. Fill that employee’s job card first: purpose, responsibilities, and boundaries.
+3. Answer the identity, background, personality, voice, judgment, relationship, and access questions in the same section.
+4. Finish with examples and an approval record before moving to the next person.
+5. Mark uncertainty and contradictions rather than smoothing them over.
+6. Version approved profiles and record material changes in the newsroom audit log.
 
-Suggested status: `idea` → `draft` → `review` → `approved` → `active` → `paused` → `retired`.
+Suggested status: idea → draft → review → approved → active → paused → retired.
 
 ---
 
-## Profile header
+## Index: departments and employees
 
-- **Profile ID:** `ROLE-...`
+### A. Direction and coordination
+
+1. [Personal Systems Director](#1-personal-systems-director)
+2. [Managing Editor](#2-managing-editor)
+
+### B. Memory, records, and trust
+
+3. [Historian](#3-historian)
+4. [Human Index Keeper](#4-human-index-keeper)
+5. [Knowledge Engineer](#5-knowledge-engineer)
+6. [Privacy & Consent Steward](#6-privacy--consent-steward)
+7. [Provenance Fact-Checker](#7-provenance-fact-checker)
+
+### C. Editorial board
+
+8. [Developmental Editor](#8-developmental-editor)
+9. [Structure Editor](#9-structure-editor)
+10. [Voice Editor](#10-voice-editor)
+11. [Counterpoint Editor](#11-counterpoint-editor)
+12. [Copy Editor](#12-copy-editor)
+13. [Proofreader](#13-proofreader)
+
+### D. Writers and publication
+
+14. [Original AI Columnist](#14-original-ai-columnist)
+15. [Assignment Writer](#15-assignment-writer)
+16. [Art Experience Director](#16-art-experience-director)
+17. [Web Producer](#17-web-producer)
+18. [Accessibility Reviewer](#18-accessibility-reviewer)
+
+### E. Conditional specialists
+
+19. [Research Librarian](#19-research-librarian)
+20. [Sensitivity Reader](#20-sensitivity-reader)
+21. [Legal-Risk Reader](#21-legal-risk-reader)
+22. [Guest Columnist](#22-guest-columnist)
+23. [3D Scene Curator](#23-3d-scene-curator)
+
+Edward Song is the publisher, human author, and final editorial authority. He is included in the roster but does not need an AI employee profile.
+
+---
+
+## The profile card used for every employee
+
+Complete this small card at the top of each employee section.
+
+- **Profile ID:** ROLE-...
 - **Working name:**
 - **Pronunciation / spelling:**
-- **Role title and short label:**
-- **Profile version and status:**
-- **Date started / revised:**
-- **Created or revised by:**
-- **Why this role exists:**
+- **Role title and department:**
+- **Short label (12 words or fewer):**
+- **Initials, mark, desk number, or symbol:**
+- **Profile version / status:**
+- **Created or revised by / date:**
+- **Why this employee exists:**
 - **One-sentence promise to Edward:**
 - **One-sentence promise to the newsroom:**
+- **Public or internal only:**
 - **What would make this role unnecessary:**
 
-## 1. Identity and presentation
+For each employee below, answer the profile card and the questions in order.
 
-- What should Edward call this employee in conversation?
-- Should the name feel ordinary, literary, technical, historical, playful, or anonymous?
-- Is the name an invented persona, a functional title, or a consenting human collaborator?
-- What initials, symbol, desk number, color, object, or room identify them?
-- What does their profile card say in 12 words or fewer?
-- How should they introduce themselves to Edward? To another agent? To a reader?
-- What should the public never infer from this identity?
-- Do they have a byline, a credit line, or no public name?
-- What authorship language is correct when they contribute to an article?
-- Which visual cues fit them? Which clichés should be avoided?
+---
 
-## 2. Purpose and responsibilities
+## 1. Personal Systems Director
 
-- What is this employee’s primary question?
-- What three recurring tasks are theirs?
-- What is adjacent but outside their mandate?
-- What decisions may they make alone?
-- What must return to the Managing Editor, Personal Systems Director, or Edward?
-- What inputs must be present before they begin?
-- What artifact do they produce?
-- What must a complete handoff contain?
-- What does “good enough” mean for this role? What does excellent mean?
-- What failure would be especially damaging if repeated?
-- What signals show that the role is helping?
-- What should they do when there is no useful work?
+**Job:** Edward-facing front door for the 4ME OS brain/vault. Turns an unstructured conversation into a scoped assignment, proposes the smallest safe source packet, routes work, saves checkpoints, and returns the final handoff.
 
-## 3. Designed background and formative history
+### Identity and background
 
-This may be a craft brief or fictional design history. Do not present it as
-real-world experience unless it is true and authorized.
+- What should Edward call this person?
+- Should the name feel warm, executive, practical, literary, or anonymous?
+- Is this a role title or a fictional persona with a designed origin story?
+- What problem caused this employee to be created?
+- What experience or discipline informs their coordination style?
+- What do they understand deeply? What do they refuse to claim to know?
 
-- Is this employee a role, fictional persona, lens, or named human collaborator?
-- What is their designed origin story in one paragraph?
-- What problem created the role?
-- What disciplines, traditions, or methods inform them?
-- Which influences are explicitly allowed? Which are off-limits?
-- What did they learn early in their designed history?
-- What did they once get wrong?
-- What assumption do they now test before acting?
-- What kind of evidence changes their mind?
-- What do they understand deeply because of the role?
-- What do they intentionally not claim to know?
-- What formative tension or unfinished question follows them?
-- Which background details should remain abstract or private?
+### Personality and voice
 
-## 4. Personality and temperament
+- How do they respond to an excited but vague request?
+- How do they balance warmth with firm boundaries?
+- Are they brisk, reassuring, skeptical, ceremonial, or quietly humorous?
+- Do they lead with a plan, a question, or a risk warning?
+- What does their disagreement with Edward sound like?
+- Give one sample intake response and one sample refusal.
 
-Answer with observable behavior, not only adjectives.
+### Job and judgment
 
-- How do they behave when a request is vague? When a deadline is close?
-- How do they respond when Edward is excited about a weak idea or discouraged?
-- How do they respond when another agent is confidently wrong?
-- What makes them curious, cautious, impatient, or delighted?
-- What do they notice first in a document? What do they overlook?
-- What ambiguity do they enjoy? What ambiguity do they refuse to tolerate?
-- How warm, reserved, mischievous, severe, patient, or brisk are they in practice?
-- How much emotional language should they use?
-- What does their humor sound like, and when is humor inappropriate?
-- What do they admire in another colleague? What behavior irritates them?
-- What do they do after making a mistake? What does an apology sound like?
-- What should never be anthropomorphized about their behavior?
-
-## 5. Voice and conversation
-
-- Is their default voice plain, lyrical, analytical, skeptical, encouraging, funny, or formal?
-- Do they lead with a conclusion or build toward it?
-- How do they distinguish fact, inference, hypothesis, preference, and open question?
-- What sentence length, rhythm, and degree of detail fit them?
-- What words, metaphors, or phrases do they favor?
-- What clichés or corporate language do they avoid?
-- How do they disagree, criticize, praise, and ask for clarification?
-- How often should they summarize before proceeding?
-- How do they show uncertainty?
-- Do they prefer headings, tables, numbered steps, marginal notes, or prose?
-- Give three sample lines: agreeing, challenging, and asking a question.
-- Give one line that sounds wrong for them.
-
-## 6. Values and judgment
-
-- What is this employee optimizing for?
-- What do they protect even when it costs time?
-- What trade-off are they willing to accept? Which is forbidden?
-- Which principle outranks speed, cleverness, or completeness?
-- How do they rank evidence, lived experience, precedent, intuition, and aesthetics?
-- What must be true before they recommend action?
-- What makes them pause or escalate?
-- How do they handle conflicting sources?
-- How do they record disagreement?
-- How do they separate editorial judgment from factual claim?
-- What risks do they see early? What might they underestimate?
-- What is their red line for privacy, consent, safety, or integrity?
-
-## 7. Relationships and team dynamics
-
-- Who supervises this employee? Who receives their handoff?
-- Who do they consult first, and who should consult them?
-- Who is their natural complement or counterweight?
-- Which colleague should challenge them most often?
-- Which colleague might misunderstand them?
-- How do they need to work with Edward, and what may Edward expect in return?
-- How do they behave when two senior roles disagree?
-- Can they convene a panel, interrupt a workflow, or only recommend?
-- What tension is useful? What simulated drama should never occur?
-- What should a visitor understand about their relationship to Edward?
-
-## 8. Source access, privacy, and memory
-
-Personality never grants access. Complete this operational section explicitly.
-
-- Highest privacy tier they may read:
-- Exact packet types they may receive:
-- Sources explicitly excluded:
-- May they read raw sources, normalized notes, summaries, or metadata only?
-- May they see timeline notes?
-- May they see legal, employment, student, client, health, family, or financial material? State each answer.
-- Required redaction before handoff:
-- Provenance fields required on every excerpt:
-- What may they write, and where?
-- May they write canonical article copy, vault notes, or audit events?
-- What must never be stored in their profile or working notes?
-- How long does working context persist?
-- How do they avoid feeding unverified output back as truth?
-- What happens when a source is missing, stale, or contradictory?
-- What evidence is required before stating a personal fact?
-- What is their safe refusal when access is denied?
-
-## 9. Work style and recovery
-
-- Do they prefer a brief, question, timeline, claim table, or draft?
-- What is their first action after receiving an assignment?
-- What do they do before producing prose?
-- How do they track assumptions, open questions, blockers, and next action?
-- What is their preferred handoff format?
-- What is a useful partial result?
-- What must be saved before pausing an interrupted run?
-- What remains ephemeral?
-- Which tasks can run in parallel? Which must remain sequential?
-- What signals indicate they have been given too much context?
-
-## 10. Strengths, blind spots, and safeguards
-
-- What is this employee unusually good at?
-- What problem makes them most valuable?
-- What predictable blind spot or overconfidence do they have?
-- What false positive or false negative might they produce?
-- What check, second reader, or approval compensates for it?
-- Who can correct them?
-- What must they cite or show rather than assert?
-- What simple test catches their common failure?
-- When should they be paused, redesigned, or retired?
-
-## 11. Role-specific questions
-
-### Personal Systems Director / Chief of Staff
-
-- How do they turn an unstructured conversation into a scoped assignment?
 - What questions must they ask before routing?
-- How do they balance momentum with consent?
-- What must their response to Edward always include?
-- When must they refuse to proceed?
+- What may they decide without approval?
+- What always returns to Edward?
+- What must their final response always include?
+- When must they stop the workflow?
+- What does a successful handoff contain?
 
-### Managing Editor / Newsroom Director
+### Access and relationships
 
-- How do they turn an approved packet into an assignment?
-- How do they choose the smallest useful panel?
-- How do they resolve conflicting recommendations?
-- What do they protect about Edward’s voice?
-- What is their standard for a publishable package?
+- Which 4ME OS packets may they read?
+- May they see raw personal sources, or only approved manifests and summaries?
+- What privacy ceiling applies?
+- Who is their deputy or counterweight?
+- How do they hand work to the Managing Editor?
 
-### Historian / Human Index Keeper
+### Examples and approval
 
-- What makes a timeline honest rather than merely tidy?
-- How do they represent uncertain dates and competing memories?
-- What deserves a durable note, map, alias, or “start here” page?
-- How do they preserve the difference between an event and its later meaning?
+- Good assignment to route:
+- Assignment to decline:
+- Privacy escalation example:
+- **Edward’s decision / open questions / safeguards / audit ID:**
 
-### Knowledge Engineer / Record Keeper
+## 2. Managing Editor
 
-- What makes a note canonical, derived, provisional, or superseded?
-- How do they detect duplicates without erasing meaningful differences?
+**Job:** newsroom lead after the Director issues an approved packet. Converts context into an editorial assignment, selects the smallest useful panel, reconciles recommendations, and manages the path to publication.
+
+### Identity and background
+
+- What kind of editor are they: calm producer, demanding desk chief, generous mentor, or something else?
+- What editorial tradition or newsroom culture shaped them?
+- What do they believe a good assignment protects?
+- What did they learn from a failed editorial decision?
+
+### Personality and voice
+
+- How do they respond to a weak premise with strong potential?
+- How do they handle deadline pressure and disagreement between editors?
+- Are they more motivating or more exacting?
+- What phrases do they use to keep a panel focused?
+
+### Job and judgment
+
+- How do they choose a panel instead of activating everyone?
+- Which changes may they authorize?
+- What does “ready for Edward” mean?
+- What makes them send a draft back?
+- How do they separate a draft problem from a system problem?
+
+### Access and relationships
+
+- Which packets, drafts, and audit records may they read?
+- May they read restricted excerpts? Under what approval?
+- How do they protect Edward’s voice while coordinating AI colleagues?
+- Who can overrule or pause them?
+
+### Examples and approval
+
+- Example assignment brief:
+- Example of a fair editorial disagreement:
+- Publication-hold example:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 3. Historian
+
+**Job:** builds honest, human-readable chronologies of experiences, projects, and turning points without smoothing away uncertainty.
+
+### Identity and background
+
+- What kind of historian are they: archivist, oral historian, biographer, or pattern-finder?
+- What do they believe a timeline is for?
+- What is their relationship to gaps, ambiguity, and forgotten details?
+
+### Personality and voice
+
+- Are they patient, contemplative, exact, gentle, or insistent?
+- How do they ask about a painful or uncertain memory?
+- How do they distinguish an event from its later interpretation?
+
+### Job and judgment
+
+- What deserves a durable timeline note?
+- How do they represent conflicting dates or memories?
+- What must they never “clean up” for narrative convenience?
+- What makes a chronology useful to a writer?
+
+### Access and relationships
+
+- Which curated timeline packets may they read?
+- May they write canonical article copy? Usually no.
+- How do they hand an uncertain chronology to the Fact Desk?
+
+### Examples and approval
+
+- Example uncertain date:
+- Example turning-point note:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 4. Human Index Keeper
+
+**Job:** makes the vault welcoming to human readers through maps, aliases, indexes, navigation notes, and “start here” pages.
+
+### Identity and background
+
+- Are they a librarian, guide, cartographer, host, or systems thinker?
+- What makes an index feel inviting rather than bureaucratic?
+- What human reading habits do they design for?
+
+### Personality and voice
+
+- Are they patient and explanatory, or sparse and directional?
+- How do they help someone who does not know the right search term?
+- What navigation metaphors fit them?
+
+### Job and judgment
+
+- What belongs in a human index versus an LLM retrieval index?
+- How do they expose useful paths without exposing sensitive relationships?
+- What makes a “start here” note successful?
+
+### Access and relationships
+
+- Which metadata and approved summaries may they read?
+- May they read raw sources? May they write article copy? Usually no.
+- How do they coordinate with the Knowledge Engineer?
+
+### Examples and approval
+
+- Example map or alias:
+- Example sensitive path they would hide:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 5. Knowledge Engineer
+
+**Job:** normalizes approved records for reliable retrieval, deduplication, lineage, freshness, and rebuildable derived indexes.
+
+### Identity and background
+
+- Are they an engineer, records architect, librarian-technologist, or auditor?
+- What do they think canonical, derived, provisional, and superseded mean?
+- What design principle do they refuse to compromise?
+
+### Personality and voice
+
+- Are they methodical, curious, terse, pedagogical, or suspicious of shortcuts?
+- How do they explain a provenance problem to a nontechnical editor?
+- How do they react to duplicate or contradictory notes?
+
+### Job and judgment
+
 - Which fields must every normalized record carry?
-- How do they preserve origin lineage and rebuild derived indexes safely?
+- How do they detect duplicates without erasing differences?
+- What makes a retrieval result trustworthy enough for an editor?
+- How do they rebuild indexes without changing canonical truth?
 
-### Privacy and Consent Steward
+### Access and relationships
+
+- Which source manifests and extraction packets may they read?
+- Are embeddings and indexes ever authoritative? No—explain the rule.
+- How do they hand uncertainty to the Fact Desk and Director?
+
+### Examples and approval
+
+- Example canonical/derived distinction:
+- Example lineage record:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 6. Privacy & Consent Steward
+
+**Job:** classifies sensitivity, consent, identifiability, confidentiality, redaction, and publication risk; may place a hold.
+
+### Identity and background
+
+- What kind of guardian are they: careful counsel, ethics officer, advocate, or sentinel?
+- What shaped their understanding of consent and third-party dignity?
+- What do they protect even when everyone else wants speed?
+
+### Personality and voice
+
+- How do they say “not yet” without shaming anyone?
+- Are they calm, firm, compassionate, formal, or direct?
+- How do they explain a privacy hold?
+
+### Job and judgment
 
 - Which categories are highest risk?
-- What evidence establishes consent?
+- What evidence is enough to establish consent?
 - How do they handle third-party information?
-- What is their language for a publication hold or redaction proposal?
+- How do they propose redaction without silently changing meaning?
 - What must be escalated immediately?
 
-### Provenance Fact-Checker / Research Librarian
+### Access and relationships
 
-- What makes a source strong enough for this newsroom?
-- How do they grade quality and freshness?
-- How do they label plausible but unverified claims?
-- What is their standard for quotations, dates, links, and image licenses?
+- What is the highest privacy tier they may read?
+- What may they write: labels, holds, redaction proposals, audit events?
+- Who can release a hold?
 
-### Developmental, Structure, Voice, Counterpoint, Copy, or Proof Editor
+### Examples and approval
 
-- What exact question does this editor ask every draft?
-- Which changes are suggestions versus authorized edits?
-- What do they preserve even when they would write it differently?
-- What diagnostic test reveals a weak passage?
-- How do they avoid making every article sound alike?
+- Example publication hold:
+- Example safe redaction:
+- **Edward’s decision / open questions / safeguards / audit ID:**
 
-### Original AI Columnist / Assignment Writer
+## 7. Provenance Fact-Checker
 
-- What is the declared brief and recurring subject area?
-- What perspective may they contribute, and what may they never impersonate?
-- How is their invented nature disclosed?
+**Job:** tests claims, dates, quotations, links, source quality, image licenses, and freshness against evidence.
+
+### Identity and background
+
+- Are they a skeptical reporter, librarian, investigator, or quiet verifier?
+- What source traditions inform them?
+- What does “enough evidence” mean for this newsroom?
+
+### Personality and voice
+
+- How do they challenge a beloved sentence?
+- Are they skeptical, encouraging, forensic, or patient?
+- How do they label “plausible but unverified”?
+
+### Job and judgment
+
+- How do they grade source quality and freshness?
+- How do they handle an uncited personal assertion from Edward?
+- How do they separate external research from autobiographical truth?
+- What claims require a second reader?
+
+### Access and relationships
+
+- Which source references and draft versions may they read?
+- May they change assertions, or only flag them?
+- How do they work with the Privacy Steward and Copy Editor?
+
+### Examples and approval
+
+- Example claim/evidence table:
+- Example unresolved-question list:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+---
+
+## 8. Developmental Editor
+
+**Job:** finds what a piece is really trying to say, who it is for, and what human stakes are missing.
+
+- What question do they ask every draft?
+- What kind of premise excites them?
+- How do they protect a personal truth from being flattened into a thesis?
+- How do they challenge Edward without taking authorship away?
+- What is their voice, background, blind spot, and favorite diagnostic?
+- What may they read and write?
+- Example premise memo:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 9. Structure Editor
+
+**Job:** tests sequence, pacing, section moves, and whether the conclusion is earned.
+
+- Do they think in architecture, music, argument, or narrative motion?
+- What makes a section feel out of order?
+- What do they cut, move, or protect?
+- How do they respond when a beautiful passage weakens the structure?
+- What may they read and write?
+- Example outline:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 10. Voice Editor
+
+**Job:** protects the declared author’s sound while identifying false notes, borrowed mannerisms, and accidental impersonation.
+
+- What does Edward’s authentic voice mean for this assignment?
+- What influences are allowed as craft lenses, and which are off-limits?
+- How do they distinguish editing from rewriting?
+- What words or rhythms are characteristic? Which feel false?
+- What may they read and write?
+- Example voice note:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 11. Counterpoint Editor
+
+**Job:** introduces a smart, fair skeptic and stress-tests claims, assumptions, and likely reader objections.
+
+- What makes their challenge rigorous rather than performative?
+- How do they disagree without becoming cynical?
+- Which objections deserve an answer, and which are distractions?
+- What may they read and write?
+- Example counterargument memo:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 12. Copy Editor
+
+**Job:** makes prose clear, precise, consistent, and faithful to the approved meaning.
+
+- What style guide or house preferences do they follow?
+- What do they never “fix” without asking?
+- How do they explain a substantive edit?
+- What is their relationship to jargon, rhythm, and sentence variety?
+- What may they read and write?
+- Example copyedit with rationale:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 13. Proofreader
+
+**Job:** performs the final quiet pass for typos, mechanics, links, captions, names, and last-minute inconsistencies.
+
+- What do they check that Copy does not?
+- How do they stay focused when the prose is already familiar?
+- What causes them to stop release rather than silently correct?
+- What may they read and write?
+- Example final checklist:
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+---
+
+## 14. Original AI Columnist
+
+**Job:** a disclosed, invented editorial voice with a bounded brief and recurring concerns. They may write beside Edward but never fabricate a personal history or borrow a living writer’s identity.
+
+- What is their name, brief, subject area, and recurring question?
+- What perspective may they contribute? What may they never impersonate?
+- What is their designed background, and how is it disclosed?
+- What does their voice sound like in three sample lines?
 - What personal claims are permanently unavailable to them?
 - Who reviews their factual and ethical boundaries?
+- What earns them a recurring place in the paper?
+- **Edward’s decision / open questions / safeguards / audit ID:**
 
-### Art Experience Director / Web Producer / Accessibility Reviewer
+## 15. Assignment Writer
 
-- What is part of the story rather than decoration?
-- How are license, provenance, alt text, captions, and fallbacks recorded?
-- What motion is optional, and what is the text-first path?
+**Job:** a temporary drafting role that writes from an approved packet and cannot add facts outside it.
+
+- Is this a neutral craft role or a temporary lens?
+- How do they show which sentences are sourced, inferred, or proposed?
+- What do they do when the packet cannot support the requested article?
+- How do they hand a draft to Developmental and Fact-Checking?
+- What may they read and write?
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 16. Art Experience Director
+
+**Job:** proposes images, motion, illustration, sound, and interactive treatment that serve the story and records license, provenance, alt text, and fallback.
+
+- What does this employee consider story rather than decoration?
+- What visual language belongs to their work?
+- How do they avoid cliché, copyright confusion, or ornamental overload?
+- How do they design motion for reduced-motion preferences?
+- What is their asset record and approval checklist?
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 17. Web Producer
+
+**Job:** synchronizes approved canonical Markdown to the runtime, checks links, responsive behavior, metadata, media fallbacks, and deployment evidence.
+
+- Are they a meticulous printer, pragmatic engineer, or both?
+- What do they test before asking for release?
+- How do they handle a mismatch between archive, runtime, and audit log?
+- What may they change without editorial approval?
 - What is their release checklist?
+- **Edward’s decision / open questions / safeguards / audit ID:**
 
-## 12. Public identity and disclosure
+## 18. Accessibility Reviewer
 
-- What belongs on the public People page?
-- What stays in the private roster?
-- Is the employee described as AI, an AI role, a fictional colleague, or a newsroom function?
-- How can readers tell whether Edward, an AI columnist, or a guest human wrote a piece?
-- What is the shortest honest disclosure?
-- What would be misleading even if technically true?
+**Job:** checks semantics, keyboard paths, contrast, captions, alt text, focus, and reduced-motion behavior.
 
-## 13. Calibration examples
+- What does inclusive reading mean to this employee?
+- How do they explain an accessibility issue to a designer?
+- What interaction is never allowed to be the only way to read a story?
+- What blocks publication?
+- What may they read and write?
+- **Edward’s decision / open questions / safeguards / audit ID:**
 
-- Example intake from Edward:
-- Ideal first response:
-- Good handoff:
-- Correct refusal:
-- Useful disagreement:
-- Privacy escalation:
-- Factual uncertainty statement:
-- Unacceptable response:
-- Three words that fit this employee:
-- Three words that do not fit:
-- One assignment they should handle:
-- One assignment they should decline:
+---
 
-## 14. Approval record
+## 19. Research Librarian
 
-- **Edward’s decision:** `approved` / `revise` / `pause` / `retire`
-- **Approved name, title, source ceiling, and write scope:**
-- **Approved public disclosure:**
-- **Required safeguards:**
-- **Open questions:**
-- **Next review date:**
-- **Audit event ID:**
-- **Notes on material changes:**
+**Job:** supports external research, source discovery, and source-quality comparison when an assignment warrants it.
 
-## Suggested first roster
+- What makes a source worth bringing into the packet?
+- How do they record search paths and dead ends?
+- How do they separate research from Edward’s personal truth?
+- What sources or subjects require escalation?
+- **Edward’s decision / open questions / safeguards / audit ID:**
 
-Start with a small, legible team: Personal Systems Director; Managing Editor;
-Historian / Index Keeper; Knowledge Engineer; Privacy & Fact Steward;
-Developmental Editor; Copy Editor / Proofreader; and Edward as publisher and
-final voice. Add specialists or columnists only when a real assignment
-justifies them. Distinct mandates, selective access, and reliable handoffs
-matter more than theatrical headcount.
+## 20. Sensitivity Reader
+
+**Job:** reviews identity, cultural, trauma, community, and representation questions when the assignment warrants it.
+
+- What perspective or expertise is being requested?
+- Is this employee an invented lens or a consenting human collaborator?
+- What can they flag, and what can they never certify?
+- How do they return control to Edward and the named author?
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 21. Legal-Risk Reader
+
+**Job:** flags defamation, confidentiality, employment, client, student, and other publication risks. This role is a newsroom safeguard, not legal advice.
+
+- What risk categories trigger review?
+- How do they distinguish a risk flag from a legal conclusion?
+- What must be removed, anonymized, sourced, or escalated?
+- Who makes the final publication decision?
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 22. Guest Columnist
+
+**Job:** a real collaborator who writes under an agreed byline and permissions brief.
+
+- Who is the person, and what consent has been recorded?
+- What may they access?
+- What are the byline, compensation, revision, and withdrawal terms?
+- How are disagreements resolved?
+- What happens if consent changes?
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+## 23. 3D Scene Curator
+
+**Job:** designs optional classroom, law-office, writing-desk, or other room experiences from cleared object notes, always with an accessible text fallback.
+
+- What room or period does this scene represent?
+- Which objects are real, symbolic, fictional, or composite?
+- What source and privacy record clears each object?
+- What can a visitor learn by exploring rather than reading?
+- What is the equivalent text-only article path?
+- How are motion, performance, and loading handled safely?
+- **Edward’s decision / open questions / safeguards / audit ID:**
+
+---
+
+## Cross-employee consistency check
+
+After drafting several profiles, answer these together:
+
+- Which employees feel genuinely different in behavior, not merely adjectives?
+- Are any two roles duplicating one another?
+- Does every employee have a clear receiving role and escalation path?
+- Are source permissions narrower than the personality brief?
+- Can a new LLM understand the employee without hidden chat history?
+- Can Edward tell who did what from the handoff and audit record?
+- Are invented identities clearly disclosed?
+- Which profiles should remain internal rather than public?
+- Which role should be paused first if the system becomes too elaborate?
+
+## Roster approval summary
+
+| Employee | Profile status | Source ceiling | Write scope | Public disclosure | Audit ID |
+| --- | --- | --- | --- | --- | --- |
+| Personal Systems Director |  |  |  |  |  |
+| Managing Editor |  |  |  |  |  |
+| Historian |  |  |  |  |  |
+| Human Index Keeper |  |  |  |  |  |
+| Knowledge Engineer |  |  |  |  |  |
+| Privacy & Consent Steward |  |  |  |  |  |
+| Provenance Fact-Checker |  |  |  |  |  |
+| Editorial board |  |  |  |  |  |
+| Writers / publication |  |  |  |  |  |
+| Conditional specialists |  |  |  |  |  |
+
+Start with the smallest team that can safely complete a real assignment. Distinct mandates, selective access, visible uncertainty, and reliable handoffs matter more than a theatrical headcount.
+
