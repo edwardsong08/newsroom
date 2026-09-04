@@ -126,3 +126,21 @@ npm run build
 Publication work is complete only when the canonical article, runtime content,
 archive, working state, and audit trail agree and the live article has been
 checked at desktop and mobile widths.
+
+## Newsroom orchestration and context saving
+
+The broader human/AI newsroom is defined in these documents:
+
+- `docs/NEWSROOM_SYSTEM.md` — constitution, hierarchy, invariants, and change control.
+- `docs/AGENT_ROSTER.md` — role contracts, read/write scopes, and specialist selection.
+- `docs/KNOWLEDGE_VAULT.md` — private Obsidian layout, source registry, privacy tiers, and ingestion.
+- `docs/EDITORIAL_WORKFLOWS.md` — assignment packets, handoffs, review gates, and acceptance.
+- `docs/NEWSROOM_SHOWCASE.md` — safe public presentation of the system.
+
+At the start of a material task, the Managing Editor (the single front door)
+must identify the assignment, allowed source scope, privacy ceiling, current
+status, next action, and blockers. Save durable context to the packet, working
+state, canonical article, or append-only audit log; never rely on hidden model
+memory. Access to personal notes is packet-scoped and enforced by the
+orchestrator. No broad local, Drive, or Gmail scan is implied by a user request;
+source scope must be explicitly authorized and dry-run inventoried first.
