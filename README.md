@@ -27,8 +27,10 @@ Start with these records before writing or publishing:
   review gates, and publishing rules
 - `docs/PERSONAL_BRAIN_INTEGRATION.md` — authority boundary and packet contract
   between the Personal Knowledge Platform and this newsroom
-- `docs/AI_EMPLOYEE_PROFILE_QUESTIONNAIRE.md` — questions for shaping distinct
-  AI employees, voices, backgrounds, relationships, and access boundaries
+- `docs/PUBLIC_FACING_EMPLOYEE_QUESTIONNAIRE.md` — guided profiles for the
+  public writers, editors, and newsroom voices
+- `docs/INTERNAL_EMPLOYEE_REGISTRY.md` — proposed names, mandates, access
+  ceilings, handoffs, and safeguards for operational staff
 - `content/ARTICLE_ARCHIVE.md` — registry of every article
 - `content/WORKING_STATE.md` — resumable checkpoint for unfinished work
 - `content/EDITORIAL_LOG.md` — append-only audit trail
